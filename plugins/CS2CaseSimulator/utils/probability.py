@@ -107,6 +107,10 @@ class ProbabilityDistributor:
                 modified_name = f"{original_name} (StarTrak™)"
         return modified_name
 
+    @staticmethod
+    def generate_uniform_random(min_val: int = 0, max_val: int = 1000) -> int:
+        return random.randint(min_val, max_val)
+
     def pick_item(self):
         quality = self.select_quality()
         item = self.uniform_choice(quality)
@@ -115,11 +119,13 @@ class ProbabilityDistributor:
         tier = self.select_tier_from_item(item) if "TierList" in item else None
         star_track = True if item["StarTrack"] == "True" and self.generate_random_decimal(0, 1) < self.config.get("StarTrack", 0) else False
         name = item["Name"] if not star_track else self.rename_star_track(item["Name"])
+        model = self.generate_uniform_random(0, 1000)
 
         return {
             "物品": name,
             "品质": quality,
             "磨损": float_value_name,
             "磨损值": float_value,
+            "模板号": model,
             "梯度": tier
         }

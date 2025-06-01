@@ -13,11 +13,14 @@ class CS2CaseSimulator(BasePlugin):
     name = "CS2CaseSimulator" # 插件名称
     version = "0.0.1" # 插件版本
     case_list = [
-        "梦魇武器箱"
+        "梦魇武器箱",
+        "反冲武器箱"
     ]
     case_dic = {
         "梦魇武器箱": "Dreams_And_Nightmares",
         "0": "Dreams_And_Nightmares",
+        "反冲武器箱": "Recoil",
+        "1": "Recoil",
     }
 
     @bot.group_event()
@@ -37,7 +40,8 @@ class CS2CaseSimulator(BasePlugin):
             text = (f"物品：{item['物品']}\n"
                     f"品质：{item['品质']}\n"
                     f"磨损：{item['磨损']}\n"
-                    f"磨损值：{item['磨损值']}")
+                    f"磨损值：{item['磨损值']}\n"
+                    f"模板号：{item['模板号']}")
             if item['梯度'] is not None:
                 text += f"\n梯度：{item['梯度']}"
             await msg.reply(text=text)
@@ -60,7 +64,8 @@ class CS2CaseSimulator(BasePlugin):
             text = (f"物品：{item['物品']}\n"
                     f"品质：{item['品质']}\n"
                     f"磨损：{item['磨损']}\n"
-                    f"磨损值：{item['磨损值']}")
+                    f"磨损值：{item['磨损值']}\n"
+                    f"模板号：{item['模板号']}")
             if item['梯度'] is not None:
                 text += f"\n梯度：{item['梯度']}"
             await msg.reply(text=text)
