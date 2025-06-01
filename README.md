@@ -1,0 +1,3 @@
+启动QQBot需要提前在NapCat.Shell目录下启动launcher-user.bat，另外记得修改launch.py下的qq号以及plugin目录下的正则表达式，否则无法运行
+
+plugin/CS2CaseSimulator插件下，如需自定义箱子类型，可参考json文件设置武器箱内容，务必保证各品质爆率总和为1，StarTrack独立计算，并在main.py下配置武器箱名称map和list
