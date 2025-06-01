@@ -1,0 +1,40 @@
+06-01 09:04:21 [info] [StdOut] 已重定向到命名管道: \\.\pipe\NapCat_54056
+06-01 09:04:21 [info] [NapCat] [Core] NapCat.Core Version: 4.7.76
+06-01 09:04:21 [info] [Check] ffmpeg: D:\G\QQBot\NapCat.Shell\ffmpeg\ffmpeg.exe
+06-01 09:04:21 [info] [Check] ffprobe: D:\G\QQBot\NapCat.Shell\ffmpeg\ffprobe.exe
+06-01 09:04:21 [info] [NapCat] [WebUi] WebUi Local Panel Url: http://127.0.0.1:6099/webui?token=Corner.Yx
+06-01 09:04:21 [info] 等待网络连接...
+06-01 09:04:21 [info] 等待网络连接...
+06-01 09:04:22 [info] 网络已连接
+06-01 09:04:22 [info] 正在快速登录  1706773717
+06-01 09:04:22 [info] 网络已连接
+06-01 09:04:22 [info] 正在快速登录  1706773717
+06-01 09:04:22 [error] 快速登录错误： 你的用户身份已失效，为保证账号安全，请你重新登录。
+06-01 09:04:22 [warn] 请扫描下面的二维码，然后在手Q上授权登录：
+06-01 09:04:22 [warn] 
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▄▄ ▀▄██  ▀▀▀▄█▄▀█ ▄▄▄▄▄ █
+█ █   █ ██▄▀ █ ▀▄▄██▄█  ▄▄█ █   █ █
+█ █▄▄▄█ ██▀▄ ▄████▄▄█▀█ ▀▄█ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ ▀▄█ ▀ █ █▄█▄█ ▀ █▄▄▄▄▄▄▄█
+█ ▄▀ ▄▀▄▀▀▄▀█▄██▀▀▄▄▄▄██▀▄█▄▀▀█▀▀▄█
+█  ▀▄  ▄ █▄██▄█▄ █▀ ▀▀▄▄ ▀▀  ▄▀▀▄▄█
+██▄▄▄▄█▄█ ▄ █▀▀▄  ▄█ ██  █▀▄▄███▄▄█
+███▄ █ ▄▄ ▄ █▀▄▀ ▄█▀  █▀█▀▀▄█ █▀█▀█
+█ ▄▀ ▄▀▄ █ █ ▄▄  ▀▀▄  ▀ ▄▀▄ ▀ ▄█  █
+█▀ ▄▀█▄▄▀▄▄ ▀▄   ▄██▄ █▄▄██▀█▄█▀▀ █
+█▀▄█ ▄ ▄ ▄██▄▀██ ▀▀▀▄█▀▀ ▀▄█▀▀▀█▀██
+█ █▄ ▀▄▄▀▀▄▀ ▀█ ▄▀ ▀█▄█ ▄▀ ▀ ▄█▀▄▄█
+█▄▄█▄▄▄▄▄▀██▄▄▀▄ █▀▀▀▄ ▀█ ▄▄▄ ▀▀ ██
+█ ▄▄▄▄▄ ██▄  ▄█   ██▄ ▄   █▄█ ▀ █▀█
+█ █   █ █ ██▀ ▄ ▀▀██  █▄▄▄ ▄▄▄▀█▄▄█
+█ █▄▄▄█ █▀ ▄▄▄   ▄▄  ▀██▀█▀▀▄   ▀ █
+█▄▄▄▄▄▄▄█▄█▄█████▄▄██▄█▄█▄▄█▄█▄████
+
+二维码解码URL: https://txz.qq.com/p?k=1qc2P9u6jnXv9iHBkWWPsG2T7Lmxj*02&f=1600001604
+如果控制台二维码无法扫码，可以复制解码url到二维码生成网站生成二维码再扫码，也可以打开下方的二维码路径图片进行扫码。
+06-01 09:04:22 [warn] 二维码已保存到 D:\G\QQBot\NapCat.Shell\cache\qrcode.png
+06-01 09:04:39 [debug] 本账号数据/缓存目录： C:\Users\1633360356\Documents\Tencent Files\NapCat\data
+06-01 09:04:39 [debug] [Core] [Config] 配置文件D:\G\QQBot\NapCat.Shell\config\napcat_1706773717.json加载 {"fileLog":false,"consoleLog":true,"fileLogLevel":"debug","consoleLogLevel":"info","packetBackend":"auto","packetServer":"","o3HookMode":1}
+06-01 09:04:39 [info] [Core] [Packet] 自动选择 NativePacketClient 作为后端
