@@ -24,14 +24,16 @@ class DailyWife(BasePlugin):
         id INT AUTO_INCREMENT PRIMARY KEY,
         qq_number VARCHAR(32) NOT NULL,
         wife_number VARCHAR(32) NOT NULL,
+        group_number VARCHAR(32) NOT NULL,
         date DATE,
-        UNIQUE KEY unique_qq_date (qq_number, wife_number)
+        UNIQUE KEY unique_qq_date (qq_number, wife_number, group_number)
     )
     """
     query_template = """
         SELECT wife_number FROM DailyWife 
         WHERE qq_number = %s 
         AND date = %s
+        AND group_number = %s
         """
 
     async def daily_wife(self, msg: GroupMessage):
@@ -40,15 +42,16 @@ class DailyWife(BasePlugin):
         self.mysql.create_table_if_not_exists("DailyWife", create_table_sql=self.create_table_sql)
         qq_number = msg.sender.user_id
         today = date.today()
-        records = self.mysql.execute_query(self.query_template, (qq_number, today))
+        group_number = msg.group_id
+        records = self.mysql.execute_query(self.query_template, (qq_number, today, group_number))
         if len(records) != 0:
             response = await self.api.get_group_member_info(group_id=msg.group_id, user_id=records[0]["wife_number"], no_cache=False)
             wife = response["data"]
-            await msg.reply(text=self.show_wife(wife), at=wife['user_id'], image='./plugins/DailyWife/test.jpg')
+            await msg.reply(text=self.show_wife(wife), at=wife['user_id'])
             return
         married_list = self.mysql.execute_query("""
-            SELECT qq_number FROM DailyWife WHERE date = %s
-        """, today)
+            SELECT qq_number FROM DailyWife WHERE date = %s AND group_number = %s
+        """, (today, group_number))
         response = await self.api.get_group_member_list(msg.group_id)
         member_list = response["data"]
         wife = PickWife(member_list, married_list, [bot_qq, msg.sender.user_id]).pick_wife()
@@ -56,15 +59,17 @@ class DailyWife(BasePlugin):
         {
             "qq_number": msg.sender.user_id,
             "wife_number": wife["user_id"],
-            "date": today
+            "date": today,
+            "group_number": group_number
         },
         {
             "qq_number": wife["user_id"],
             "wife_number": msg.sender.user_id,
-            "date": today
+            "date": today,
+            "group_number": group_number
         }]
-                               )
-        await msg.reply(text=self.show_wife(wife), at=wife['user_id'], image='./plugins/DailyWife/test.jpg')
+        )
+        await msg.reply(text=self.show_wife(wife), at=wife['user_id'])
 
     @staticmethod
     def show_wife(wife):
