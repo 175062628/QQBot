@@ -95,31 +95,35 @@ class MySQLAssistant:
             print(f"执行查询时出错: {e}")
         return results
 
-    def insert_data(self, table_name, data):
-        """向指定表插入数据
-
-        Args:
-            table_name (str): 表名
-            data (dict): 要插入的数据，键为列名，值为对应的值
-        """
+    def insert_data(self, table_name, data_list):
         if not self.connection:
             if not self.connect():
                 return False
 
-        if not data:
+        if not isinstance(data_list, list) or not data_list:
             return False
 
-        columns = ', '.join(data.keys())
-        placeholders = ', '.join(['%s'] * len(data))
-        values = tuple(data.values())
+        if not all(isinstance(item, dict) for item in data_list):
+            return False
 
-        query = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})"
+        first_keys = set(data_list[0].keys())
+        for item in data_list[1:]:
+            if set(item.keys()) != first_keys:
+                return False
+
+        columns = ', '.join(first_keys)
+        placeholders = ', '.join(['%s'] * len(first_keys))
+        values = [tuple(item.values()) for item in data_list]
 
         try:
             with self.connection.cursor() as cursor:
-                cursor.execute(query, values)
+                cursor.executemany(
+                    f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})",
+                    values
+                )
                 self.connection.commit()
                 return True
         except Exception as e:
+            print(f"插入多条数据出错: {e}")
             self.connection.rollback()
             return False

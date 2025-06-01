@@ -22,7 +22,7 @@ async def on_private_message(msg: PrivateMessage):
 # ========== 启动 BotClient==========
 if __name__ == "__main__":
     bot.run(
-        bt_uin="1706773717",
+        bt_uin="3909177943",
         root="1633360356",
         enable_webui_interaction=False
     )

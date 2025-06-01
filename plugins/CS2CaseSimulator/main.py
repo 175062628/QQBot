@@ -22,10 +22,10 @@ class CS2CaseSimulator(BasePlugin):
 
     @bot.group_event()
     async def on_group_event(self, msg: GroupMessage):
-        if msg.raw_message == "?:\[CQ:at,qq=1706773717\]|@Bot)\s开箱":
+        if msg.raw_message == "?:\[CQ:at,qq=3909177943\]|@Bot)\s开箱":
             await msg.reply(text=f"选择武器箱 / 使用方式：开箱 梦魇武器箱 || 开箱 0 / 0 对应梦魇 / 目前可用武器箱如下：{self.case_list}")
             return
-        pattern = r'(?:\[CQ:at,qq=1706773717\]|@Bot)\s+开箱\s*'
+        pattern = r'(?:\[CQ:at,qq=3909177943\]|@Bot)\s+开箱\s*'
         if re.match(pattern, msg.raw_message):
             target_case = msg.raw_message.split(' ')[-1]
             if target_case not in self.case_dic:

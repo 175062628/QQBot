@@ -37,7 +37,7 @@ class DailyLuck(BasePlugin):
     """
     @bot.group_event()
     async def on_group_event(self, msg: GroupMessage):
-        pattern = r"(?:\[CQ:at,qq=1706773717\]|@Bot)\s+今日运势"
+        pattern = r"(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日运势"
         if not re.match(pattern, msg.raw_message):
             return
         self.mysql.create_table_if_not_exists("DailyLuck", create_table_sql=self.create_table_sql)
@@ -74,7 +74,7 @@ class DailyLuck(BasePlugin):
         result["qq_number"] = qq_number
         result["date"] = today
 
-        self.mysql.insert_data("DailyLuck", result)
+        self.mysql.insert_data("DailyLuck", [result])
         await msg.reply(text=f"{result['description']}", image=image)
     async def on_load(self):
         # 插件加载时执行的操作, 可缺省
