@@ -10,7 +10,7 @@ from ncatbot.core import BotClient, GroupMessage
 
 sys.path.append(os.path.dirname(__file__))
 from utils.mysql_assistant import MySQLAssistant
-from utils.PickWife import PickWife
+from utils.pick_wife import PickWife
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
@@ -44,7 +44,7 @@ class DailyWife(BasePlugin):
         if len(records) != 0:
             response = await self.api.get_group_member_info(group_id=msg.group_id, user_id=records[0]["wife_number"], no_cache=False)
             wife = response["data"]
-            await msg.reply(text=self.show_wife(wife), at=wife['user_id'])
+            await msg.reply(text=self.show_wife(wife), at=wife['user_id'], image='./plugins/DailyWife/test.jpg')
             return
         married_list = self.mysql.execute_query("""
             SELECT qq_number FROM DailyWife WHERE date = %s
@@ -64,7 +64,7 @@ class DailyWife(BasePlugin):
             "date": today
         }]
                                )
-        await msg.reply(text=self.show_wife(wife), at=wife['user_id'])
+        await msg.reply(text=self.show_wife(wife), at=wife['user_id'], image='./plugins/DailyWife/test.jpg')
 
     @staticmethod
     def show_wife(wife):
