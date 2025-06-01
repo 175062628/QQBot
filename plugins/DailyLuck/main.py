@@ -57,9 +57,8 @@ class DailyLuck(BasePlugin):
         # 插件加载时执行的操作, 可缺省
         print(f"{self.name} 插件已加载")
         print(f"插件版本: {self.version}")
-        self.register_admin_func(
+        self.register_user_func(
             "DailyLuck",
             handler=self.daily_luck,
             regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日运势$|^今日运势$",
-            permission_raise=True
         )

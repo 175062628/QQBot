@@ -56,15 +56,13 @@ class CS2CaseSimulator(BasePlugin):
         # 插件加载时执行的操作, 可缺省
         print(f"{self.name} 插件已加载")
         print(f"插件版本: {self.version}")
-        self.register_admin_func(
+        self.register_user_func(
             "CS2CaseSimulator",
             handler=self.simulator,
             regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+开箱\s+.+|^开箱\s+.+",
-            permission_raise=True
         )
-        self.register_admin_func(
+        self.register_user_func(
             "CS2CaseSimulatorHelper",
             handler=self.help_info,
             regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+开箱$|^开箱$",
-            permission_raise=True
         )

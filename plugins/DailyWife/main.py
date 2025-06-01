@@ -76,9 +76,8 @@ class DailyWife(BasePlugin):
         # 插件加载时执行的操作, 可缺省
         print(f"{self.name} 插件已加载")
         print(f"插件版本: {self.version}")
-        self.register_admin_func(
+        self.register_user_func(
             "DailyWife",
             handler=self.daily_wife,
             regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日老婆$|^今日老婆$",
-            permission_raise=True
         )
