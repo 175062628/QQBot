@@ -59,7 +59,7 @@ class DailyLuck(BasePlugin):
         print(f"插件版本: {self.version}")
         self.register_admin_func(
             "DailyLuck",
-            handler=self.daily_luck(),
+            handler=self.daily_luck,
             regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日运势$|^今日运势$",
             permission_raise=True
         )

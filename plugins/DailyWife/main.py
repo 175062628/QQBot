@@ -35,10 +35,8 @@ class DailyWife(BasePlugin):
         """
 
     async def daily_wife(self, msg: GroupMessage):
-        pattern = r"(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日老婆"
-        if not re.match(pattern, msg.raw_message):
+        if msg.message_type != "group":
             return
-
         self.mysql.create_table_if_not_exists("DailyWife", create_table_sql=self.create_table_sql)
         qq_number = msg.sender.user_id
         today = date.today()
@@ -80,7 +78,7 @@ class DailyWife(BasePlugin):
         print(f"插件版本: {self.version}")
         self.register_admin_func(
             "DailyWife",
-            handler=self.daily_wife(),
+            handler=self.daily_wife,
             regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日老婆$|^今日老婆$",
             permission_raise=True
         )

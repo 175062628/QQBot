@@ -27,12 +27,12 @@ class CS2CaseSimulator(BasePlugin):
     }
 
     async def help_info(self, msg: GroupMessage):
-        await msg.reply(text=f"选择武器箱 / 使用方式：开箱 梦魇武器箱 || 开箱 0 / 0 对应梦魇 / 目前可用武器箱如下：{self.case_list}")
+        await msg.reply(text=f"选择武器箱(示例：开箱梦魇武器箱 / 开箱0)\n当前武器箱列表{self.get_available_list()}")
 
     async def simulator(self, msg: GroupMessage):
         target_case = msg.raw_message.split(' ')[-1]
         if target_case not in self.case_dic:
-            await msg.reply(text=f"暂不支持该武器箱，目前可用武器箱如下：{self.case_list}")
+            await msg.reply(text=f"暂不支持该武器箱，目前可用武器箱如下：{self.get_available_list()}")
             return
         probability_distributor = ProbabilityDistributor(f"./plugins/CS2CaseSimulator/CaseList/{self.case_dic[target_case]}.json")
         item = probability_distributor.pick_item()
@@ -45,6 +45,12 @@ class CS2CaseSimulator(BasePlugin):
         if item['梯度'] is not None:
             text += f"\n梯度：{item['梯度']}"
         await msg.reply(text=text)
+
+    def get_available_list(self):
+        text = ""
+        for index, value in enumerate(self.case_list):
+            text += f"\n{index} -- {value}"
+        return text
 
     async def on_load(self):
         # 插件加载时执行的操作, 可缺省
