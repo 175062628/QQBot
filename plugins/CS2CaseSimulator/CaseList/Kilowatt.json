@@ -1,0 +1,229 @@
+{
+  "StarTrack": 0.2,
+  "Consumer": 0,
+  "Industrial": 0,
+  "Mil-Spec": 0.79923,
+  "Restricted": 0.15985,
+  "Classified": 0.03197,
+  "Covert": 0.00639,
+  "Contraband": 0.00256,
+  "List": [
+    {
+      "Name": "★ 廓尔喀刀 | 深红之网",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 渐变之色",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 屠夫",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 香草",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 表面淬火",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 人工染色",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 蓝钢",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 夜色",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 枯焦之色",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 都市伪装",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 森林 DDPAT",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 北方森林",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "★ 廓尔喀刀 | 狩猎网格",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True",
+    },
+    {
+      "Name": "AK-47 | 传承",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Covert",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "AWP | 镀铬大炮",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Covert",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "USP 消音版 | 破颚者",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "M4A1 消音型 | 黑莲花",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "宙斯 X27 电击枪 | 奥林匹斯",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "USP 消音版 | 地狱门票",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "M4A4 | 蚀刻领主",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "格洛克 18 型 | 崩络克-18",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "截短霰弹枪 | 模拟输入",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "MP7 | 笑一个",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "FN57 | 混合体",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "MAC-10 | 灯箱",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "SSG 08 | 灾难",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "Tec-9 | 渣渣",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "XM1014 | 刺青",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "新星 | 黑暗徽记",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "双持贝瑞塔 | 藏身处",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "UMP-45 | 机动化",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    }
+  ]
+}

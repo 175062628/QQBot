@@ -12817,3 +12817,189 @@ AttributeError: 'GoBang' object has no attribute 'daily_wife'
 [2025-06-01 17:58:00,984.984] INFO     [MainThread|MainProcess] Logger (client.py:clean_up:154) | 清理回调函数...
 [2025-06-01 17:58:00,985.985] INFO     [MainThread|MainProcess] Logger (client.py:clean_up:162) | 清理工作结束, NcatBot 已经正常退出
 [2025-06-01 17:58:00,985.985] INFO     [MainThread|MainProcess] Logger (client.py:exit_:141) | 返回码: 0
+[2025-06-01 18:24:21,049.049] DEBUG    [MainThread|MainProcess] Logger (config.py:_load_default_config:84) | 从默认配置文件 config.yaml 加载配置
+[2025-06-01 18:24:21,076.076] DEBUG    [ThreadPoolExecutor-0_0|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): ghfast.top:443
+[2025-06-01 18:24:21,076.076] DEBUG    [ThreadPoolExecutor-0_2|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): cdn.moran233.xyz:443
+[2025-06-01 18:24:21,076.076] DEBUG    [ThreadPoolExecutor-0_1|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): github.7boe.top:443
+[2025-06-01 18:24:21,077.077] DEBUG    [ThreadPoolExecutor-0_8|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): git.886.be:443
+[2025-06-01 18:24:21,077.077] DEBUG    [ThreadPoolExecutor-0_7|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): fastgit.cc:443
+[2025-06-01 18:24:21,078.078] DEBUG    [ThreadPoolExecutor-0_4|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): github.whrstudio.top:443
+[2025-06-01 18:24:21,078.078] DEBUG    [ThreadPoolExecutor-0_6|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): ghproxy.net:443
+[2025-06-01 18:24:21,078.078] DEBUG    [ThreadPoolExecutor-0_5|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): proxy.yaoyaoling.net:443
+[2025-06-01 18:24:21,079.079] DEBUG    [ThreadPoolExecutor-0_9|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): gh-proxy.com:443
+[2025-06-01 18:24:21,079.079] DEBUG    [ThreadPoolExecutor-0_3|MainProcess] urllib3.connectionpool (connectionpool.py:_new_conn:1022) | Starting new HTTPS connection (1): gh-proxy.ygxz.in:443
+[2025-06-01 18:24:21,230.230] DEBUG    [ThreadPoolExecutor-0_2|MainProcess] urllib3.connectionpool (connectionpool.py:_make_request:475) | https://cdn.moran233.xyz:443 "GET / HTTP/1.1" 404 19
+[2025-06-01 18:24:21,308.308] DEBUG    [ThreadPoolExecutor-0_5|MainProcess] urllib3.connectionpool (connectionpool.py:_make_request:475) | https://proxy.yaoyaoling.net:443 "GET / HTTP/1.1" 200 None
+[2025-06-01 18:24:21,338.338] INFO     [MainThread|MainProcess] Logger (config.py:validate_config:174) | [BOTQQ]: 3909177943 | [WSURI]: ws://localhost:3001 | [WS_TOKEN]:  | [ROOT]: 1633360356 | [WEBUI]: http://localhost:6099
+[2025-06-01 18:24:21,338.338] INFO     [MainThread|MainProcess] Logger (config.py:validate_config:186) | 未启用插件白名单或黑名单，将加载所有插件
+[2025-06-01 18:24:21,339.339] DEBUG    [MainThread|MainProcess] AccessController (access_controller.py:_load_access:172) | 加载权限
+[2025-06-01 18:24:21,343.343] DEBUG    [MainThread|MainProcess] asyncio (proactor_events.py:__init__:626) | Using proactor: IocpProactor
+[2025-06-01 18:24:21,346.346] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:__init__:256) | = connection is CONNECTING
+[2025-06-01 18:24:21,346.346] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:114) | > GET / HTTP/1.1
+[2025-06-01 18:24:21,347.347] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Host: localhost:3001
+[2025-06-01 18:24:21,347.347] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Upgrade: websocket
+[2025-06-01 18:24:21,348.348] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Connection: Upgrade
+[2025-06-01 18:24:21,348.348] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Key: vZlIOLrzpnzcq5jfRDtVdQ==
+[2025-06-01 18:24:21,348.348] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Version: 13
+[2025-06-01 18:24:21,348.348] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+[2025-06-01 18:24:21,349.349] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Content-Type: application/json
+[2025-06-01 18:24:21,349.349] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > User-Agent: Python/3.10 websockets/10.4
+[2025-06-01 18:24:21,351.351] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:147) | < HTTP/1.1 101 Switching Protocols
+[2025-06-01 18:24:21,352.352] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Upgrade: websocket
+[2025-06-01 18:24:21,352.352] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Connection: Upgrade
+[2025-06-01 18:24:21,353.353] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Sec-WebSocket-Accept: uSCzSvyjAEdXsENJIzTODXX7knI=
+[2025-06-01 18:24:21,353.353] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_open:357) | = connection is OPEN
+[2025-06-01 18:24:21,354.354] DEBUG    [MainThread|MainProcess] Logger (wsroute.py:check_websocket:29) | WebSocket ws://localhost:3001 可用.
+[2025-06-01 18:24:21,354.354] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"time":1748773461,"self_id":3909177943,"post_t...","sub_type":"connect"}' [116 bytes]
+[2025-06-01 18:24:21,354.354] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_close_frame:1232) | = connection is CLOSING
+[2025-06-01 18:24:21,355.355] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_frame_sync:1183) | > CLOSE 1000 (OK) [2 bytes]
+[2025-06-01 18:24:21,356.356] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < CLOSE 1000 (OK) [2 bytes]
+[2025-06-01 18:24:21,356.356] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_lost:1514) | = connection is CLOSED
+[2025-06-01 18:24:21,359.359] INFO     [MainThread|MainProcess] adapter.nc.launcher (launcher.py:ncatbot_service_remote_start:51) | napcat 服务器 ws://localhost:3001 在线, 连接中...
+[2025-06-01 18:24:21,359.359] WARNING  [MainThread|MainProcess] adapter.nc.launcher (launcher.py:ncatbot_service_remote_start:53) | 跳过基于 WebUI 交互的检查, 请自行确保 NapCat 已经登录了正确的 QQ 3909177943
+[2025-06-01 18:24:21,359.359] INFO     [MainThread|MainProcess] Logger (client.py:run:319) | NapCat 服务启动登录完成
+[2025-06-01 18:24:21,360.360] DEBUG    [MainThread|MainProcess] asyncio (proactor_events.py:__init__:626) | Using proactor: IocpProactor
+[2025-06-01 18:24:21,360.360] DEBUG    [MainThread|MainProcess] Logger (client.py:info_subscribe_message_types:250) | 已订阅消息类型:[群聊]全部消息类型
+[2025-06-01 18:24:21,361.361] DEBUG    [MainThread|MainProcess] Logger (client.py:info_subscribe_message_types:251) | 已订阅消息类型:[私聊]全部消息类型
+[2025-06-01 18:24:21,361.361] INFO     [MainThread|MainProcess] PluginLoader (loader.py:load_plugins:455) | 插件加载目录: D:\G\QQBot\plugins
+[2025-06-01 18:24:21,429.429] INFO     [MainThread|MainProcess] PluginLoader (loader.py:load_plugins:464) | 准备加载插件 [4]......
+[2025-06-01 18:24:21,431.431] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:fix_plugin_dependencies:389) | 正在修复插件依赖关系
+[2025-06-01 18:24:21,431.431] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:fix_plugin_dependencies:392) | 插件 CS2CaseSimulator 缺少 dependencies 属性
+[2025-06-01 18:24:21,431.431] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:fix_plugin_dependencies:392) | 插件 DailyLuck 缺少 dependencies 属性
+[2025-06-01 18:24:21,432.432] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:fix_plugin_dependencies:392) | 插件 DailyWife 缺少 dependencies 属性
+[2025-06-01 18:24:21,432.432] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:fix_plugin_dependencies:392) | 插件 GoBang 缺少 dependencies 属性
+[2025-06-01 18:24:21,432.432] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:from_class_load_plugins:397) | 正在检查插件合法性
+[2025-06-01 18:24:21,433.433] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:from_class_load_plugins:410) | 正在构建插件依赖图
+[2025-06-01 18:24:21,433.433] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:from_class_load_plugins:420) | 正在初始化插件 CS2CaseSimulator
+[2025-06-01 18:24:21,436.436] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:from_class_load_plugins:420) | 正在初始化插件 DailyLuck
+[2025-06-01 18:24:21,438.438] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:from_class_load_plugins:420) | 正在初始化插件 DailyWife
+[2025-06-01 18:24:21,440.440] DEBUG    [MainThread|MainProcess] PluginLoader (loader.py:from_class_load_plugins:420) | 正在初始化插件 GoBang
+[2025-06-01 18:24:21,444.444] DEBUG    [MainThread|MainProcess] Logger (event_bus.py:set_plugin_funcs:144) | 加载插件 CS2CaseSimulator 的功能 CS2CaseSimulator
+[2025-06-01 18:24:21,444.444] DEBUG    [MainThread|MainProcess] Logger (event_bus.py:set_plugin_funcs:144) | 加载插件 CS2CaseSimulator 的功能 CS2CaseSimulatorHelper
+[2025-06-01 18:24:21,445.445] DEBUG    [MainThread|MainProcess] Logger (event_bus.py:set_plugin_funcs:144) | 加载插件 DailyLuck 的功能 DailyLuck
+[2025-06-01 18:24:21,448.448] DEBUG    [MainThread|MainProcess] Logger (event_bus.py:set_plugin_funcs:144) | 加载插件 DailyWife 的功能 DailyWife
+[2025-06-01 18:24:21,449.449] ERROR    [MainThread|MainProcess] PluginLoader (loader.py:load_plugins:471) | 加载插件 __pycache__ 时出错: 'GoBang' object has no attribute 'daily_wife'
+[2025-06-01 18:24:21,451.451] ERROR    [MainThread|MainProcess] PluginLoader (loader.py:load_plugins:472) | Traceback (most recent call last):
+  File "D:\G\QQBot\.venv\lib\site-packages\ncatbot\plugin\loader\loader.py", line 465, in load_plugins
+    await self.from_class_load_plugins(plugins, **kwargs)
+  File "D:\G\QQBot\.venv\lib\site-packages\ncatbot\plugin\loader\loader.py", line 439, in from_class_load_plugins
+    await self.plugins[name].__onload__()
+  File "D:\G\QQBot\.venv\lib\site-packages\ncatbot\plugin\base_plugin\base_plugin.py", line 254, in __onload__
+    await self.on_load()
+  File "D:\G\QQBot\plugins\Gobang\main.py", line 28, in on_load
+    handler=self.daily_wife,
+AttributeError: 'GoBang' object has no attribute 'daily_wife'
+
+[2025-06-01 18:24:21,452.452] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:__init__:256) | = connection is CONNECTING
+[2025-06-01 18:24:21,453.453] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:114) | > GET /event HTTP/1.1
+[2025-06-01 18:24:21,453.453] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Host: localhost:3001
+[2025-06-01 18:24:21,454.454] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Upgrade: websocket
+[2025-06-01 18:24:21,454.454] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Connection: Upgrade
+[2025-06-01 18:24:21,454.454] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Key: V35abWFW6bQmKLTk1boMuQ==
+[2025-06-01 18:24:21,455.455] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Version: 13
+[2025-06-01 18:24:21,455.455] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+[2025-06-01 18:24:21,455.455] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Content-Type: application/json
+[2025-06-01 18:24:21,455.455] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > User-Agent: Python/3.10 websockets/10.4
+[2025-06-01 18:24:21,456.456] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:147) | < HTTP/1.1 101 Switching Protocols
+[2025-06-01 18:24:21,457.457] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Upgrade: websocket
+[2025-06-01 18:24:21,457.457] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Connection: Upgrade
+[2025-06-01 18:24:21,457.457] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Sec-WebSocket-Accept: duT1d58aoPoRP74haVdx4XM8YB4=
+[2025-06-01 18:24:21,458.458] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_open:357) | = connection is OPEN
+[2025-06-01 18:24:21,458.458] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"time":1748773461,"self_id":3909177943,"post_t...","sub_type":"connect"}' [116 bytes]
+[2025-06-01 18:24:21,458.458] INFO     [MainThread|MainProcess] Logger (connect.py:on_message:43) | 机器人 3909177943 成功启动
+[2025-06-01 18:24:21,565.565] DEBUG    [ThreadPoolExecutor-0_3|MainProcess] urllib3.connectionpool (connectionpool.py:_make_request:475) | https://gh-proxy.ygxz.in:443 "GET / HTTP/1.1" 200 None
+[2025-06-01 18:24:21,737.737] DEBUG    [ThreadPoolExecutor-0_0|MainProcess] urllib3.connectionpool (connectionpool.py:_make_request:475) | https://ghfast.top:443 "GET / HTTP/1.1" 200 None
+[2025-06-01 18:24:21,752.752] DEBUG    [ThreadPoolExecutor-0_6|MainProcess] urllib3.connectionpool (connectionpool.py:_make_request:475) | https://ghproxy.net:443 "GET / HTTP/1.1" 200 None
+[2025-06-01 18:24:21,894.894] DEBUG    [ThreadPoolExecutor-0_8|MainProcess] urllib3.connectionpool (connectionpool.py:_make_request:475) | https://git.886.be:443 "GET / HTTP/1.1" 200 None
+[2025-06-01 18:24:21,932.932] DEBUG    [ThreadPoolExecutor-0_9|MainProcess] urllib3.connectionpool (connectionpool.py:_make_request:475) | https://gh-proxy.com:443 "GET / HTTP/1.1" 200 None
+[2025-06-01 18:24:22,590.590] DEBUG    [ThreadPoolExecutor-0_7|MainProcess] urllib3.connectionpool (connectionpool.py:_make_request:475) | https://fastgit.cc:443 "GET / HTTP/1.1" 200 None
+[2025-06-01 18:24:25,255.255] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"self_id":3909177943,"user_id":2682409575,"tim...","group_id":200386719}' [467 bytes]
+[2025-06-01 18:24:25,256.256] DEBUG    [MainThread|MainProcess] Logger (client.py:handle_group_event:166) | {'group_id': '200386719', 'user_id': '2682409575', 'message_type': 'group', 'sub_type': 'normal', 'font': '14', 'sender': "{'user_id': 2682409575, 'nickname': '海胆味西兰花•᷄ࡇ•᷅\\u200b', 'card': '全部曹飞'}", 'raw_message': '开箱', 'message_id': '1442294897', 'message_seq': '1442294897', 'real_id': '1442294897', 'message': "[{'type': 'text', 'data': {'text': '开箱'}}]", 'message_format': 'array'}
+[2025-06-01 18:24:25,257.257] INFO     [MainThread|MainProcess] Logger (launch.py:on_group_message:12) | {'group_id': '200386719', 'user_id': '2682409575', 'message_type': 'group', 'sub_type': 'normal', 'font': '14', 'sender': "{'user_id': 2682409575, 'nickname': '海胆味西兰花•᷄ࡇ•᷅\\u200b', 'card': '全部曹飞'}", 'raw_message': '开箱', 'message_id': '1442294897', 'message_seq': '1442294897', 'real_id': '1442294897', 'message': "[{'type': 'text', 'data': {'text': '开箱'}}]", 'message_format': 'array'}
+[2025-06-01 18:24:25,260.260] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:__init__:256) | = connection is CONNECTING
+[2025-06-01 18:24:25,262.262] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:114) | > GET /api HTTP/1.1
+[2025-06-01 18:24:25,262.262] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Host: localhost:3001
+[2025-06-01 18:24:25,262.262] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Upgrade: websocket
+[2025-06-01 18:24:25,264.264] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Connection: Upgrade
+[2025-06-01 18:24:25,264.264] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Key: ffXMVPNmP7Y8ufYbgzbyMQ==
+[2025-06-01 18:24:25,264.264] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Version: 13
+[2025-06-01 18:24:25,265.265] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+[2025-06-01 18:24:25,265.265] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Content-Type: application/json
+[2025-06-01 18:24:25,266.266] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > User-Agent: Python/3.10 websockets/10.4
+[2025-06-01 18:24:25,267.267] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:147) | < HTTP/1.1 101 Switching Protocols
+[2025-06-01 18:24:25,267.267] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Upgrade: websocket
+[2025-06-01 18:24:25,268.268] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Connection: Upgrade
+[2025-06-01 18:24:25,268.268] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Sec-WebSocket-Accept: OrHNPPybwr16WVXbmg4+ymKHGRs=
+[2025-06-01 18:24:25,268.268] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_open:357) | = connection is OPEN
+[2025-06-01 18:24:25,269.269] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_frame_sync:1183) | > TEXT '{"action": "send_group_msg", "params": {"group_...]}, "echo": 1748773465}' [448 bytes]
+[2025-06-01 18:24:25,664.664] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"status":"ok","retcode":0,"data":{"message_id"...":"","echo":1748773465}' [104 bytes]
+[2025-06-01 18:24:25,664.664] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_close_frame:1232) | = connection is CLOSING
+[2025-06-01 18:24:25,665.665] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_frame_sync:1183) | > CLOSE 1000 (OK) [2 bytes]
+[2025-06-01 18:24:25,667.667] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < CLOSE 1000 (OK) [2 bytes]
+[2025-06-01 18:24:25,667.667] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_lost:1514) | = connection is CLOSED
+[2025-06-01 18:24:25,668.668] DEBUG    [MainThread|MainProcess] Logger (function_enhance.py:check_and_log:76) | {'status': 'ok', 'retcode': 0, 'data': {'message_id': 2102731720}, 'message': '', 'wording': '', 'echo': 1748773465}
+[2025-06-01 18:24:41,458.458] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"self_id":3909177943,"user_id":1633360356,"tim...","group_id":200386719}' [471 bytes]
+[2025-06-01 18:24:41,459.459] DEBUG    [MainThread|MainProcess] Logger (client.py:handle_group_event:166) | {'group_id': '200386719', 'user_id': '1633360356', 'message_type': 'group', 'sub_type': 'normal', 'font': '14', 'sender': "{'user_id': 1633360356, 'nickname': '蚊子没有🐴', 'card': '芥末美人鱼🧜🏻\\u200d♀️'}", 'raw_message': '开箱 0', 'message_id': '1141794709', 'message_seq': '1141794709', 'real_id': '1141794709', 'message': "[{'type': 'text', 'data': {'text': '开箱 0'}}]", 'message_format': 'array'}
+[2025-06-01 18:24:41,459.459] INFO     [MainThread|MainProcess] Logger (launch.py:on_group_message:12) | {'group_id': '200386719', 'user_id': '1633360356', 'message_type': 'group', 'sub_type': 'normal', 'font': '14', 'sender': "{'user_id': 1633360356, 'nickname': '蚊子没有🐴', 'card': '芥末美人鱼🧜🏻\\u200d♀️'}", 'raw_message': '开箱 0', 'message_id': '1141794709', 'message_seq': '1141794709', 'real_id': '1141794709', 'message': "[{'type': 'text', 'data': {'text': '开箱 0'}}]", 'message_format': 'array'}
+[2025-06-01 18:24:41,463.463] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:__init__:256) | = connection is CONNECTING
+[2025-06-01 18:24:41,464.464] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:114) | > GET /api HTTP/1.1
+[2025-06-01 18:24:41,464.464] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Host: localhost:3001
+[2025-06-01 18:24:41,465.465] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Upgrade: websocket
+[2025-06-01 18:24:41,465.465] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Connection: Upgrade
+[2025-06-01 18:24:41,465.465] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Key: r6YkFkQuvkxqZ4DgGrudNQ==
+[2025-06-01 18:24:41,465.465] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Version: 13
+[2025-06-01 18:24:41,466.466] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+[2025-06-01 18:24:41,466.466] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Content-Type: application/json
+[2025-06-01 18:24:41,466.466] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > User-Agent: Python/3.10 websockets/10.4
+[2025-06-01 18:24:41,467.467] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:147) | < HTTP/1.1 101 Switching Protocols
+[2025-06-01 18:24:41,467.467] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Upgrade: websocket
+[2025-06-01 18:24:41,467.467] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Connection: Upgrade
+[2025-06-01 18:24:41,468.468] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Sec-WebSocket-Accept: KsCraCAxvTjvP9/q0hdti0nsggk=
+[2025-06-01 18:24:41,468.468] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_open:357) | = connection is OPEN
+[2025-06-01 18:24:41,468.468] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_frame_sync:1183) | > TEXT '{"action": "send_group_msg", "params": {"group_...]}, "echo": 1748773481}' [388 bytes]
+[2025-06-01 18:24:41,869.869] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"status":"ok","retcode":0,"data":{"message_id"...":"","echo":1748773481}' [104 bytes]
+[2025-06-01 18:24:41,870.870] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_close_frame:1232) | = connection is CLOSING
+[2025-06-01 18:24:41,870.870] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_frame_sync:1183) | > CLOSE 1000 (OK) [2 bytes]
+[2025-06-01 18:24:41,870.870] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < CLOSE 1000 (OK) [2 bytes]
+[2025-06-01 18:24:41,871.871] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_lost:1514) | = connection is CLOSED
+[2025-06-01 18:24:41,871.871] DEBUG    [MainThread|MainProcess] Logger (function_enhance.py:check_and_log:76) | {'status': 'ok', 'retcode': 0, 'data': {'message_id': 2106965754}, 'message': '', 'wording': '', 'echo': 1748773481}
+[2025-06-01 18:24:44,950.950] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"time":1748773484,"self_id":3909177943,"post_t...true},"interval":30000}' [149 bytes]
+[2025-06-01 18:24:44,950.950] DEBUG    [MainThread|MainProcess] Logger (connect.py:on_message:45) | {'time': 1748773484, 'self_id': 3909177943, 'post_type': 'meta_event', 'meta_event_type': 'heartbeat', 'status': {'online': True, 'good': True}, 'interval': 30000}
+[2025-06-01 18:24:51,799.799] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"self_id":3909177943,"user_id":1633360356,"tim...","group_id":200386719}' [468 bytes]
+[2025-06-01 18:24:51,801.801] DEBUG    [MainThread|MainProcess] Logger (client.py:handle_group_event:166) | {'group_id': '200386719', 'user_id': '1633360356', 'message_type': 'group', 'sub_type': 'normal', 'font': '14', 'sender': "{'user_id': 1633360356, 'nickname': '蚊子没有🐴', 'card': '芥末美人鱼🧜🏻\\u200d♀️'}", 'raw_message': '开箱 3', 'message_id': '103560733', 'message_seq': '103560733', 'real_id': '103560733', 'message': "[{'type': 'text', 'data': {'text': '开箱 3'}}]", 'message_format': 'array'}
+[2025-06-01 18:24:51,802.802] INFO     [MainThread|MainProcess] Logger (launch.py:on_group_message:12) | {'group_id': '200386719', 'user_id': '1633360356', 'message_type': 'group', 'sub_type': 'normal', 'font': '14', 'sender': "{'user_id': 1633360356, 'nickname': '蚊子没有🐴', 'card': '芥末美人鱼🧜🏻\\u200d♀️'}", 'raw_message': '开箱 3', 'message_id': '103560733', 'message_seq': '103560733', 'real_id': '103560733', 'message': "[{'type': 'text', 'data': {'text': '开箱 3'}}]", 'message_format': 'array'}
+[2025-06-01 18:24:51,804.804] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:__init__:256) | = connection is CONNECTING
+[2025-06-01 18:24:51,805.805] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:114) | > GET /api HTTP/1.1
+[2025-06-01 18:24:51,805.805] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Host: localhost:3001
+[2025-06-01 18:24:51,805.805] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Upgrade: websocket
+[2025-06-01 18:24:51,807.807] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Connection: Upgrade
+[2025-06-01 18:24:51,807.807] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Key: MAnw1I+QNj3EzgRlHQYFPQ==
+[2025-06-01 18:24:51,807.807] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Version: 13
+[2025-06-01 18:24:51,808.808] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+[2025-06-01 18:24:51,808.808] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > Content-Type: application/json
+[2025-06-01 18:24:51,808.808] DEBUG    [MainThread|MainProcess] websockets.client (client.py:write_http_request:116) | > User-Agent: Python/3.10 websockets/10.4
+[2025-06-01 18:24:51,809.809] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:147) | < HTTP/1.1 101 Switching Protocols
+[2025-06-01 18:24:51,810.810] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Upgrade: websocket
+[2025-06-01 18:24:51,810.810] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Connection: Upgrade
+[2025-06-01 18:24:51,810.810] DEBUG    [MainThread|MainProcess] websockets.client (client.py:read_http_response:149) | < Sec-WebSocket-Accept: CBvXfHXQuGLFvaEYgasYfjCvxdE=
+[2025-06-01 18:24:51,811.811] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_open:357) | = connection is OPEN
+[2025-06-01 18:24:51,811.811] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_frame_sync:1183) | > TEXT '{"action": "send_group_msg", "params": {"group_...]}, "echo": 1748773491}' [409 bytes]
+[2025-06-01 18:24:52,163.163] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < TEXT '{"status":"ok","retcode":0,"data":{"message_id"...":"","echo":1748773491}' [103 bytes]
+[2025-06-01 18:24:52,165.165] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_close_frame:1232) | = connection is CLOSING
+[2025-06-01 18:24:52,166.166] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:write_frame_sync:1183) | > CLOSE 1000 (OK) [2 bytes]
+[2025-06-01 18:24:52,166.166] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:read_frame:1177) | < CLOSE 1000 (OK) [2 bytes]
+[2025-06-01 18:24:52,167.167] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_lost:1514) | = connection is CLOSED
+[2025-06-01 18:24:52,167.167] DEBUG    [MainThread|MainProcess] Logger (function_enhance.py:check_and_log:76) | {'status': 'ok', 'retcode': 0, 'data': {'message_id': 977167430}, 'message': '', 'wording': '', 'echo': 1748773491}
+[2025-06-01 18:25:02,999.999] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:connection_lost:1514) | = connection is CLOSED
+[2025-06-01 18:25:03,001.001] DEBUG    [MainThread|MainProcess] websockets.client (protocol.py:fail_connection:1429) | ! failing connection with code 1006
+[2025-06-01 18:25:03,002.002] ERROR    [MainThread|MainProcess] Logger (connect.py:on_connect:64) | Websocket error: no close frame received or sent
+[2025-06-01 18:25:03,002.002] INFO     [MainThread|MainProcess] Logger (client.py:_run_async:275) | 正在尝试重连服务器...
+[2025-06-01 18:25:05,927.927] INFO     [MainThread|MainProcess] Logger (client.py:clean_up:146) | 调用退出回调...
+[2025-06-01 18:25:05,928.928] DEBUG    [MainThread|MainProcess] asyncio (proactor_events.py:__init__:626) | Using proactor: IocpProactor
+[2025-06-01 18:25:05,929.929] INFO     [MainThread|MainProcess] Logger (client.py:clean_up:152) | 插件卸载中...
+[2025-06-01 18:25:05,929.929] DEBUG    [MainThread|MainProcess] asyncio (proactor_events.py:__init__:626) | Using proactor: IocpProactor
+[2025-06-01 18:25:05,930.930] DEBUG    [MainThread|MainProcess] AccessController (access_controller.py:_save_access:188) | 保存权限
+[2025-06-01 18:25:05,934.934] ERROR    [MainThread|MainProcess] PluginLoader (loader.py:unload_all:703) | 在卸载某个插件时产生了错误: list.remove(x): x not in list
+[2025-06-01 18:25:05,934.934] INFO     [MainThread|MainProcess] Logger (client.py:clean_up:154) | 清理回调函数...
+[2025-06-01 18:25:05,934.934] INFO     [MainThread|MainProcess] Logger (client.py:clean_up:162) | 清理工作结束, NcatBot 已经正常退出
+[2025-06-01 18:25:05,935.935] INFO     [MainThread|MainProcess] Logger (client.py:exit_:141) | 返回码: 0

@@ -15,7 +15,10 @@ class CS2CaseSimulator(BasePlugin):
     case_list = [
         "梦魇武器箱",
         "反冲武器箱",
-        "热潮武器箱"
+        "热潮武器箱",
+        "手套武器箱",
+        "千瓦武器箱",
+        "突围大行动武器箱"
     ]
     case_dic = {
         "梦魇武器箱": "Dreams_And_Nightmares",
@@ -23,7 +26,13 @@ class CS2CaseSimulator(BasePlugin):
         "反冲武器箱": "Recoil",
         "1": "Recoil",
         "热潮武器箱": "Fever_Weapon",
-        "2": "Fever_Weapon"
+        "2": "Fever_Weapon",
+        "手套武器箱": "Glove",
+        "3": "Glove",
+        "千瓦武器箱": "Kilowatt",
+        "4": "Kilowatt",
+        "突围大行动武器箱": "Operation_Breakout_Weapon",
+        "5": "Operation_Breakout_Weapon",
     }
 
     async def help_info(self, msg: GroupMessage):

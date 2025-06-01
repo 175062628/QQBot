@@ -1,0 +1,299 @@
+{
+  "StarTrack": 0.2,
+  "Consumer": 0,
+  "Industrial": 0,
+  "Mil-Spec": 0.79923,
+  "Restricted": 0.15985,
+  "Classified": 0.03197,
+  "Covert": 0.00639,
+  "Contraband": 0.00256,
+  "List": [
+    {
+      "Name": " 血猎手套（★） | 染铜",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "血猎手套（★） | 焦炭",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "血猎手套（★） | 游击队",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "血猎手套（★） | 蛇咬",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "驾驶手套（★） | 护卫",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "驾驶手套（★） | 深红织物",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "驾驶手套（★） | 菱背蛇纹",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "驾驶手套（★） | 月色织物",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "裹手（★） | 恶土",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "裹手（★） | 皮革",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "裹手（★） | 屠夫",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "裹手（★） | 云杉 DDPAT",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "摩托手套（★） | *嘣！*",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "摩托手套（★） | 清凉薄荷",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "摩托手套（★） | 日蚀",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "摩托手套（★） | 薄荷",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "专业手套（★） | 深红和服",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "专业手套（★） | 翠绿之网",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "专业手套（★） | 森林 DDPAT",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "专业手套（★） | 元勋",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "运动手套（★） | 干旱",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "运动手套（★） | 树篱迷宫",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "运动手套（★） | 潘多拉之盒",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "运动手套（★） | 超导体",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "False"
+    },
+    {
+      "Name": "M4A4 | 喧嚣杀戮",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Covert",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "SSG 08 | 炎龙之焰",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Covert",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "法玛斯 | 机械工业",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "P90 | 浅坟",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "截短霰弹枪 | 荒野公主",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "双持贝瑞塔 | 皇室伴侣",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "G3SG1 | 毒刺",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "M4A1 消音型 | 闪回",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "新星 | 毒蜥",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "USP 消音版 | 次时代",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "CZ75 | 聚合物",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "加利尔 AR | 黑砂",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "格洛克 18 型 | 铁之作",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "MAG-7 | 声纳",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "MP7 | 卷云",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "MP9 | 砂垢",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "P2000 | 草皮",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    }
+  ]
+}
