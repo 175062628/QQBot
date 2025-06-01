@@ -26,8 +26,8 @@ class PickWife:
         ]
 
     def pick_wife(self):
-        availiable_list = self.remove_duplicates()
-        if not availiable_list:
+        available_list = self.remove_duplicates()
+        if not available_list:
             return None
-        random_index = random.randint(0, len(availiable_list) - 1)
-        return availiable_list[random_index]
+        random_index = random.randint(0, len(available_list) - 1)
+        return available_list[random_index]

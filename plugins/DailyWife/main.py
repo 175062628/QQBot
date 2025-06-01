@@ -33,8 +33,8 @@ class DailyWife(BasePlugin):
         WHERE qq_number = %s 
         AND date = %s
         """
-    @bot.group_event()
-    async def on_group_event(self, msg: GroupMessage):
+
+    async def daily_wife(self, msg: GroupMessage):
         pattern = r"(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日老婆"
         if not re.match(pattern, msg.raw_message):
             return
@@ -68,13 +68,19 @@ class DailyWife(BasePlugin):
                                )
         await msg.reply(text=self.show_wife(wife), at=wife['user_id'])
 
-    async def on_load(self):
-        # 插件加载时执行的操作, 可缺省
-        print(f"{self.name} 插件已加载")
-        print(f"插件版本: {self.version}")
-
     @staticmethod
     def show_wife(wife):
         name = wife["nickname"] if not wife["card"] else wife["card"]
         text = f"今天的老婆是：{name} "
         return text
+
+    async def on_load(self):
+        # 插件加载时执行的操作, 可缺省
+        print(f"{self.name} 插件已加载")
+        print(f"插件版本: {self.version}")
+        self.register_admin_func(
+            "DailyWife",
+            handler=self.daily_wife(),
+            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日老婆$|^今日老婆$",
+            permission_raise=True
+        )

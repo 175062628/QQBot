@@ -1,0 +1,370 @@
+{
+  "StarTrack": 0.2,
+  "Consumer": 0,
+  "Industrial": 0,
+  "Mil-Spec": 0.79923,
+  "Restricted": 0.15985,
+  "Classified": 0.03197,
+  "Covert": 0.00639,
+  "Contraband": 0.00256,
+  "List": [
+    {
+      "Name": "流浪者匕首（★）",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "流浪者匕首（★） | 大马士革钢",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "暗影双匕（★） | 自由之手",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "流浪者匕首（★） | 多普勒",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True",
+      "TierList": {
+        "RedTreasure": 0.1,
+        "BlueTreasure": 0.1,
+        "BlackPearl": 0.1,
+        "P1": 0.225,
+        "P2": 0.225,
+        "P3": 0.225,
+        "P4": 0.225
+      }
+    },
+    {
+      "Name": "流浪者匕首（★） | 渐变大理石",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "流浪者匕首（★） | 外表生锈",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "流浪者匕首（★） | 虎牙",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "流浪者匕首（★） | 致命紫罗兰",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "系绳匕首（★）",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "系绳匕首（★） | 大马士革钢",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "系绳匕首（★） | 多普勒",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True",
+      "TierList": {
+        "RedTreasure": 0.1,
+        "BlueTreasure": 0.1,
+        "BlackPearl": 0.1,
+        "P1": 0.225,
+        "P2": 0.225,
+        "P3": 0.225,
+        "P4": 0.225
+      }
+    },
+    {
+      "Name": "系绳匕首（★） | 渐变大理石",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "系绳匕首（★） | 外表生锈",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "系绳匕首（★） | 虎牙",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "系绳匕首（★） | 致命紫罗兰",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "骷髅匕首（★）",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "骷髅匕首（★） | 大马士革钢",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "骷髅匕首（★） | 多普勒",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True",
+      "TierList": {
+        "RedTreasure": 0.1,
+        "BlueTreasure": 0.1,
+        "BlackPearl": 0.1,
+        "P1": 0.225,
+        "P2": 0.225,
+        "P3": 0.225,
+        "P4": 0.225
+      }
+    },
+    {
+      "Name": "骷髅匕首（★） | 渐变大理石",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "骷髅匕首（★） | 外表生锈",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "骷髅匕首（★） | 虎牙",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "骷髅匕首（★） | 致命紫罗兰",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "求生匕首（★）",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "求生匕首（★） | 大马士革钢",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "求生匕首（★） | 多普勒",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True",
+      "TierList": {
+        "RedTreasure": 0.1,
+        "BlueTreasure": 0.1,
+        "BlackPearl": 0.1,
+        "P1": 0.225,
+        "P2": 0.225,
+        "P3": 0.225,
+        "P4": 0.225
+      }
+    },
+    {
+      "Name": "求生匕首（★） | 渐变大理石",
+      "FloatValueMin": 0,
+      "FloatValueMax": 0.15,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "求生匕首（★） | 外表生锈",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "求生匕首（★） | 虎牙",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "求生匕首（★） | 致命紫罗兰",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Contraband",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "AWP | 印花集",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Covert",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "法玛斯 | 幻灭之旅",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Covert",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "AK-47 | 灼心怒焰",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "格洛克 18 型 | 忍瞳",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "UMP-45 | K.O.工厂",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Classified",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "沙漠之鹰 | 巨蟒冲击",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "加利尔 AR | 控制",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "新星 | 初升之樱",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "P90 | 破浪者",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "宙斯 X27 电击枪 | 当岁鱼",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Restricted",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "M4A4 | 战鹰",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "MAG-7 | 重新补给",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "MP9 | 中枢",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "P2000 | 防滑握把",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "SSG 08 | 纪念碑",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "USP 消音版 | PC-GRN",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    },
+    {
+      "Name": "XM1014 | 知更鸟",
+      "FloatValueMin": 0,
+      "FloatValueMax": 1,
+      "Quality": "Mil-Spec",
+      "StarTrack": "True"
+    }
+  ]
+}
