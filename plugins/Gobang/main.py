@@ -63,7 +63,7 @@ class GoBang(BasePlugin):
             await msg.reply(text=f"暂时无人敢来对弈")
         self.game.start_game(self.player, self.rival)
         self.player.set_game(self.rival)
-        await msg.reply(text=f"[CQ:at,qq={self.player.id}][CQ:at,qq={self.rival.id}] 对弈开始，输入：xy 1 2 落子，现在由[CQ:at,qq={self.player.id}]执手")
+        await msg.reply(text=f"[CQ:at,qq={self.player.id}][CQ:at,qq={self.rival.id}] 对弈开始，输入：1 2 落子，现在由[CQ:at,qq={self.player.id}]执手")
 
     async def chess_down(self, msg: GroupMessage):
         if self.game.status != Status.PLAYING:
@@ -117,7 +117,7 @@ class GoBang(BasePlugin):
         self.register_user_func(
             "ChessDown",
             handler=self.chess_down,
-            regex="(?:\[CQ:at,qq=3909177943\]|@Bot)\s+xy\s+\d+\s+\d+$|^xy\s+\d+\s+\d+",
+            regex="(?:\[CQ:at,qq=3909177943\]|@Bot)\s+\d+\s+\d+$|^\d+\s+\d+",
         )
         self.register_user_func(
             "GiveUp",

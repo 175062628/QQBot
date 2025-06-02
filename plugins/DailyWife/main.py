@@ -6,11 +6,11 @@ from datetime import date, datetime
 import requests
 
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
-from ncatbot.core import BotClient, GroupMessage
+from ncatbot.core import GroupMessage
 
 sys.path.append(os.path.dirname(__file__))
-from utils.mysql_assistant import MySQLAssistant
-from utils.pick_wife import PickWife
+from .utils.mysql_assistant import MySQLAssistant
+from .utils.pick_wife import PickWife
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
@@ -37,6 +37,7 @@ class DailyWife(BasePlugin):
         """
 
     async def daily_wife(self, msg: GroupMessage):
+        print(msg)
         if msg.message_type != "group":
             return
         self.mysql.create_table_if_not_exists("DailyWife", create_table_sql=self.create_table_sql)
@@ -52,23 +53,23 @@ class DailyWife(BasePlugin):
         married_list = self.mysql.execute_query("""
             SELECT qq_number FROM DailyWife WHERE date = %s AND group_number = %s
         """, (today, group_number))
-        response = await self.api.get_group_member_list(msg.group_id)
+        response = await self.api.get_group_member_list(group_number)
         member_list = response["data"]
         wife = PickWife(member_list, married_list, [bot_qq, msg.sender.user_id]).pick_wife()
         self.mysql.insert_data("DailyWife", [
-        {
-            "qq_number": msg.sender.user_id,
-            "wife_number": wife["user_id"],
-            "date": today,
-            "group_number": group_number
-        },
-        {
-            "qq_number": wife["user_id"],
-            "wife_number": msg.sender.user_id,
-            "date": today,
-            "group_number": group_number
-        }]
-        )
+            {
+                "qq_number": msg.sender.user_id,
+                "wife_number": wife["user_id"],
+                "date": today,
+                "group_number": group_number
+            },
+            {
+                "qq_number": wife["user_id"],
+                "wife_number": msg.sender.user_id,
+                "date": today,
+                "group_number": group_number
+            },
+        ])
         await msg.reply(text=self.show_wife(wife), at=wife['user_id'])
 
     @staticmethod

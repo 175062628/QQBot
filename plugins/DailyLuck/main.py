@@ -9,8 +9,8 @@ from ncatbot.plugin import BasePlugin, CompatibleEnrollment
 from ncatbot.core import GroupMessage, PrivateMessage
 
 sys.path.append(os.path.dirname(__file__))
-from utils.mysql_assistant import MySQLAssistant
-from utils.explain import Explain
+from .utils.mysql_assistant import MySQLAssistant
+from .utils.explain import Explain
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
@@ -50,7 +50,7 @@ class DailyLuck(BasePlugin):
         result["qq_number"] = qq_number
         result["date"] = today
 
-        self.mysql.insert_data("DailyLuck", result)
+        self.mysql.insert_data("DailyLuck", [result])
         await msg.reply(text=f"{result['description']}", image=image)
 
     async def on_load(self):
