@@ -2,13 +2,18 @@ import os
 import sys
 
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
-from ncatbot.core import BotClient, GroupMessage
+from ncatbot.core import GroupMessage
 
 sys.path.append(os.path.dirname(__file__))
 
 from utils.game import Game, Player, ChessCode, Status
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
+
+from utils import load_config_from_yaml
+config = load_config_from_yaml("config.yaml")
+bot_id = config.get("bot_id")
+bot_name = config.get("bot_name")
 
 class GoBang(BasePlugin):
     name = "GoBang" # 插件名称
@@ -34,10 +39,16 @@ class GoBang(BasePlugin):
         if self.rival:
             await msg.reply(at=[self.player.id, self.rival.id] ,text=f"在下棋，等一等吧")
             return
+        if self.player.id == msg.sender.user_id:
+            await msg.reply(text=f"你已落座，请耐心等待对手......")
+            return
         self.rival = Player(msg.sender.user_id, 2)
         await msg.reply(at=self.player.id, text=f"双方就绪，输入：启动 开始对弈")
 
     async def quit_game(self, msg: GroupMessage):
+        if self.player is None and self.rival is None:
+            await msg.reply(text=f"现在还没人落座，请先输入 五子棋 等待对手")
+            return
         if self.game.status == Status.PLAYING:
             await msg.reply(text=f"游戏已经开始，请先 投降")
             return
@@ -102,30 +113,30 @@ class GoBang(BasePlugin):
         self.register_user_func(
             "NewGame",
             handler=self.new_game,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+五子棋$|^五子棋$",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+五子棋$|^五子棋$",
         )
         self.register_user_func(
             "PlayGame",
             handler=self.play_game,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+对弈$|^对弈$",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+对弈$|^对弈$",
         )
         self.register_user_func(
             "StartGame",
             handler=self.start_game,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+启动$|^启动$",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+启动$|^启动$",
         )
         self.register_user_func(
             "ChessDown",
             handler=self.chess_down,
-            regex="(?:\[CQ:at,qq=3909177943\]|@Bot)\s+\d+\s+\d+$|^\d+\s+\d+",
+            regex=f"(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+\d+\s+\d+$|^\d+\s+\d+",
         )
         self.register_user_func(
             "GiveUp",
             handler=self.give_up,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+投降$|^投降$",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+投降$|^投降$",
         )
         self.register_user_func(
             "QuitGame",
             handler=self.quit_game,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+退出$|^退出$",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+退出$|^退出$",
         )

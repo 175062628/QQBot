@@ -14,6 +14,11 @@ from .utils.explain import Explain
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
+from utils import load_config_from_yaml
+config = load_config_from_yaml("config.yaml")
+bot_id = config.get("bot_id")
+bot_name = config.get("bot_name")
+
 class DailyLuck(BasePlugin):
     name = "DailyLuck" # 插件名称
     version = "0.0.1" # 插件版本
@@ -88,10 +93,10 @@ class DailyLuck(BasePlugin):
         self.register_user_func(
             "DailyLuck",
             handler=self.daily_luck,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+今日运势$|^今日运势$",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+今日运势$|^今日运势$",
         )
         self.register_user_func(
             "ChangeLuck",
             handler=self.change_luck,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+逆天改命$|^逆天改命$",
+            regex=f"^(?:\[CQ:at,qq=={bot_id}\]|@{bot_name})\s+逆天改命$|^逆天改命$",
         )

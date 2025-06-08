@@ -9,6 +9,11 @@ from utils.probability import ProbabilityDistributor
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
+from utils import load_config_from_yaml
+config = load_config_from_yaml("config.yaml")
+bot_id = config.get("bot_id")
+bot_name = config.get("bot_name")
+
 class CS2CaseSimulator(BasePlugin):
     name = "CS2CaseSimulator" # 插件名称
     version = "0.0.1" # 插件版本
@@ -68,10 +73,10 @@ class CS2CaseSimulator(BasePlugin):
         self.register_user_func(
             "CS2CaseSimulator",
             handler=self.simulator,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+开箱\s+.+|^开箱\s+.+",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱\s+.+|^开箱\s+.+",
         )
         self.register_user_func(
             "CS2CaseSimulatorHelper",
             handler=self.help_info,
-            regex="^(?:\[CQ:at,qq=3909177943\]|@Bot)\s+开箱$|^开箱$",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱$|^开箱$",
         )
