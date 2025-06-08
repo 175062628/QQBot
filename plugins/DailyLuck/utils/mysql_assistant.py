@@ -106,21 +106,17 @@ class MySQLAssistant:
         if not all(isinstance(item, dict) for item in data_list):
             return False
 
-        # 获取第一行的键并排序，确保所有行使用相同的列顺序
         columns = list(data_list[0].keys())
-        columns_sorted = sorted(columns)  # 固定列顺序（按字母排序）
+        columns_sorted = sorted(columns)
 
-        # 验证所有行的键集合相同
         first_keys = set(columns)
         for item in data_list[1:]:
             if set(item.keys()) != first_keys:
                 return False
 
-        # 构建 SQL 和值列表
         column_names = ', '.join(columns_sorted)
         placeholders = ', '.join(['%s'] * len(columns_sorted))
 
-        # 按排序后的列顺序提取值
         values = [tuple(item[col] for col in columns_sorted) for item in data_list]
 
         try:
@@ -133,5 +129,37 @@ class MySQLAssistant:
                 return True
         except Exception as e:
             print(f"插入多条数据出错: {e}")
+            self.connection.rollback()
+            return False
+
+    def update_data(self, template, condition, data_list):
+        if not self.connection:
+            if not self.connect():
+                return False
+
+        if not isinstance(data_list, list) or not data_list:
+            return False
+
+        if not all(isinstance(item, dict) for item in data_list):
+            return False
+        set_clause = template.split("SET")[1].split("WHERE")[0].strip()
+        set_fields = [field.split("=")[0].strip() for field in set_clause.split(",")]
+
+        for item in data_list:
+            for field in set_fields:
+                if field not in item:
+                    return False
+        batch_params = [
+            tuple(item[field] for field in set_fields) + condition
+            for item in data_list
+        ]
+
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.executemany(template, batch_params)
+                self.connection.commit()
+                return True
+        except Exception as e:
+            print(f"更新数据失败: {e}")
             self.connection.rollback()
             return False
