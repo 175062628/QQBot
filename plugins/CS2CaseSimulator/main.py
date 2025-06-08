@@ -1,11 +1,10 @@
 import sys
 import os
-import re
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
-from ncatbot.core import GroupMessage, PrivateMessage
+from ncatbot.core import GroupMessage
 
 sys.path.append(os.path.dirname(__file__))
-from utils.probability import ProbabilityDistributor
+from .probability import ProbabilityDistributor
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
