@@ -77,7 +77,7 @@ class DailyMusic(BasePlugin):
             Music("163", music['id'])
         ])
 
-        self.mysql.insert_data("DailyLuck", [music])
+        self.mysql.insert_data("DailyMusic", [music])
         await msg.reply(rtf=message)
 
     async def on_load(self):
