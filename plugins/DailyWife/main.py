@@ -14,7 +14,13 @@ from .utils.pick_wife import PickWife
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
-bot_qq = "3909177943"
+bot_qq = ["3909177943",
+          "2811935727",
+          "1706773717",
+          "3889006601",
+          "2854197266",
+          "2854208500"]
+
 class DailyWife(BasePlugin):
     name = "DailyWife" # 插件名称
     version = "0.0.1" # 插件版本
@@ -55,14 +61,7 @@ class DailyWife(BasePlugin):
         """, (today, group_number))
         response = await self.api.get_group_member_list(group_number)
         member_list = response["data"]
-        wife = PickWife(member_list, married_list, [bot_qq,
-                                                    msg.sender.user_id,
-                                                    "2811935727",
-                                                    "1706773717",
-                                                    "3889006601",
-                                                    "2854197266",
-                                                    "2854208500"
-                                                    ]).pick_wife()
+        wife = PickWife(member_list, married_list, bot_qq.copy().append(msg.sender.user_id)).pick_wife()
         self.mysql.insert_data("DailyWife", [
             {
                 "qq_number": msg.sender.user_id,
