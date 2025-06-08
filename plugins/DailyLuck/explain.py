@@ -3,7 +3,6 @@ from typing import Dict, Any
 
 class Explain:
     def __init__(self, response):
-        print(response)
         self.luck = self._get_luck(response["type"])
         self.description = response["daily"]
     @staticmethod

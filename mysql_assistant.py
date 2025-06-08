@@ -2,6 +2,7 @@ import pymysql
 from pymysql.cursors import DictCursor
 import yaml
 from pathlib import Path
+from utils import load_config_from_yaml
 
 class MySQLAssistant:
     def __init__(self, config=None, config_file=None):
@@ -15,7 +16,7 @@ class MySQLAssistant:
 
         # 优先从配置文件加载，否则使用传入的配置字典
         if config_file:
-            self.config = self._load_config_from_yaml(config_file)
+            self.config = load_config_from_yaml(config_file)
         elif config:
             self.config = config
         else:
@@ -26,16 +27,6 @@ class MySQLAssistant:
         self.user = self.config.get('user')
         self.password = self.config.get('password')
         self.database = self.config.get('database')
-
-    @staticmethod
-    def _load_config_from_yaml(config_file):
-        """从 YAML 文件加载配置"""
-        try:
-            with Path(config_file).open('r', encoding='utf-8') as f:
-                return yaml.safe_load(f)
-        except Exception as e:
-            print(f"加载配置文件时出错: {e}")
-            return {}
 
     def connect(self):
         """连接到指定的 MySQL 数据库"""

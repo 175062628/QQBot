@@ -1,2 +1,6 @@
 bot_id: 3909177943
 bot_name: Bot
+host: localhost
+user: root
+password: Yx030411
+database: QQBot

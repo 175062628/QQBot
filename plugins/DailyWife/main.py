@@ -1,16 +1,13 @@
 import os
 import sys
-import re
-import json
-from datetime import date, datetime
-import requests
+from datetime import date
 
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
 from ncatbot.core import GroupMessage
 
 sys.path.append(os.path.dirname(__file__))
-from .utils.mysql_assistant import MySQLAssistant
-from .utils.pick_wife import PickWife
+from mysql_assistant import MySQLAssistant
+from .pick_wife import PickWife
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
@@ -29,7 +26,7 @@ bot_name = config.get("bot_name")
 class DailyWife(BasePlugin):
     name = "DailyWife" # 插件名称
     version = "0.0.1" # 插件版本
-    mysql = MySQLAssistant(config_file="./plugins/DailyWife/config.yaml")
+    mysql = MySQLAssistant(config_file="config.yaml")
     create_table_sql = """
     CREATE TABLE IF NOT EXISTS DailyWife (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -48,7 +45,6 @@ class DailyWife(BasePlugin):
         """
 
     async def daily_wife(self, msg: GroupMessage):
-        print(msg)
         if msg.message_type != "group":
             return
         self.mysql.create_table_if_not_exists("DailyWife", create_table_sql=self.create_table_sql)

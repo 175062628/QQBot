@@ -1,16 +1,14 @@
 import os
 import sys
-import re
-import json
-from datetime import date, datetime
+from datetime import date
 import requests
 
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
-from ncatbot.core import GroupMessage, PrivateMessage
+from ncatbot.core import GroupMessage
 
 sys.path.append(os.path.dirname(__file__))
-from .utils.mysql_assistant import MySQLAssistant
-from .utils.explain import Explain
+from mysql_assistant import MySQLAssistant
+from .explain import Explain
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
@@ -22,7 +20,7 @@ bot_name = config.get("bot_name")
 class DailyLuck(BasePlugin):
     name = "DailyLuck" # 插件名称
     version = "0.0.1" # 插件版本
-    mysql = MySQLAssistant(config_file="./plugins/DailyLuck/config.yaml")
+    mysql = MySQLAssistant(config_file="config.yaml")
     api_uri = "https://api.milimoe.com/userdaily/get/"
     image_api = "https://acg.yaohud.cn/dm/acg.php?return=url"
     change_luck_api = "https://api.milimoe.com/userdaily/remove/"
