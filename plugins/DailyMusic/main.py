@@ -1,9 +1,7 @@
 import os
 import sys
-import re
-import json
-from datetime import date, datetime
 import requests
+import random
 
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
 from ncatbot.core import GroupMessage, Music, MessageChain, Text, Image
@@ -25,19 +23,16 @@ class DailyMusic(BasePlugin):
     mysql = MySQLAssistant(config_file="config.yaml")
     create_table_sql = """
         CREATE TABLE IF NOT EXISTS DailyMusic (
-            id INT AUTO_INCREMENT PRIMARY KEY,
+            id INT PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             author VARCHAR(255) NOT NULL,
-            date DATE,
             type VARCHAR(8),
             image VARCHAR(255),
             music VARCHAR(255),
-            UNIQUE KEY music (name, date, type)
         )
         """
     query_template = """
         SELECT * FROM DailyMusic
-        WHERE date = %s
         AND type = %s
         """
 
@@ -56,21 +51,33 @@ class DailyMusic(BasePlugin):
             "author": response["auther"],
             "image": response["pic_url"],
             "music": response["url"],
+            "type": word,
             "status": "success"
         }
         return result
 
     async def get_top_music(self, msg: GroupMessage):
+        self.mysql.create_table_if_not_exists("DailyMusic", create_table_sql=self.create_table_sql)
         word = msg.raw_message.split(' ')[-1]
         music = self.music(word)
         if music["status"] == "fail":
-            await msg.reply(text="接口出错，请稍后再试")
+            records = self.mysql.execute_query(self.query_template, word)
+            music = random.choice(records)
+            message = MessageChain([
+                Text(f"{word}\n歌名：{music['name']}\n歌手：{music['author']}"),
+                Image(music['image']),
+                Music("163", music['id'])
+            ])
+            await msg.reply(rtf=message)
+            return
 
         message = MessageChain([
             Text(f"{word}\n歌名：{music['name']}\n歌手：{music['author']}"),
             Image(music['image']),
             Music("163", music['id'])
         ])
+
+        self.mysql.insert_data("DailyLuck", [music])
         await msg.reply(rtf=message)
 
     async def on_load(self):

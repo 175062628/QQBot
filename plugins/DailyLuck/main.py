@@ -44,7 +44,6 @@ class DailyLuck(BasePlugin):
     UPDATE DailyLuck SET luck = %s, description = %s, changed = %s
     WHERE qq_number = %s
     AND date = %s
-    
     """
 
     async def daily_luck(self, msg: GroupMessage):
