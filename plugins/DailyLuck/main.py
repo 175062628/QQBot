@@ -70,7 +70,7 @@ class DailyLuck(BasePlugin):
         if len(records) == 0:
             await msg.reply(text=f"今天你还没有测过运势哦")
             return
-        if records[0]["changed"] is "True":
+        if records[0]["changed"] == "True":
             await msg.reply(text=f"今天已经改过运了，人心不足蛇吞象，小心神明大人降下惩罚")
             return
         requests.post(f"{self.change_luck_api}{qq_number}")
