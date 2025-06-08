@@ -4,7 +4,7 @@ from ncatbot.plugin import BasePlugin, CompatibleEnrollment
 from ncatbot.core import GroupMessage
 
 sys.path.append(os.path.dirname(__file__))
-from .utils.probability import ProbabilityDistributor
+from .probability import ProbabilityDistributor
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
@@ -40,7 +40,7 @@ class CS2CaseSimulator(BasePlugin):
     }
 
     async def help_info(self, msg: GroupMessage):
-        await msg.reply(text=f"选择武器箱(示例：开箱梦魇武器箱 / 开箱0)\n当前武器箱列表{self.get_available_list()}")
+        await msg.reply(text=f"选择武器箱(示例：开箱梦魇武器箱 / 开箱 0)\n当前武器箱列表{self.get_available_list()}")
 
     async def simulator(self, msg: GroupMessage):
         target_case = msg.raw_message.split(' ')[-1]
