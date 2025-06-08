@@ -28,7 +28,7 @@ class DailyMusic(BasePlugin):
             author VARCHAR(255) NOT NULL,
             type VARCHAR(8),
             image VARCHAR(255),
-            music VARCHAR(255),
+            music VARCHAR(255)
         )
         """
     query_template = """
