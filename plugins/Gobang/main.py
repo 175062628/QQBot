@@ -6,7 +6,7 @@ from ncatbot.core import GroupMessage
 
 sys.path.append(os.path.dirname(__file__))
 
-from utils.game import Game, Player, ChessCode, Status
+from .utils.game import Game, Player, ChessCode, Status
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
