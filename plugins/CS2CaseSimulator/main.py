@@ -66,7 +66,7 @@ class CS2CaseSimulator(BasePlugin):
         timestamp = int(time.time() * 1000)
 
         if (msg.sender.user_id in self.user_interval_map
-                and msg.sender.user_id not in self.banned_interval
+                and msg.sender.user_id not in self.banned_list
                 and timestamp - self.user_interval_map[msg.sender.user_id] < self.interval):
             self.banned_list[msg.sender.user_id] = timestamp
             await msg.reply(text=f"触发截流限制，请在{self.format_seconds(int((self.user_interval_map[msg.sender.user_id] + self.interval - timestamp) / 1000))}后重试，若在此次截流期间再次触发截流，该账户将被屏蔽一天；屏蔽期间每触发一次截流，额外追加一天")
@@ -75,7 +75,7 @@ class CS2CaseSimulator(BasePlugin):
         if msg.sender.user_id in self.banned_list:
             # 没超过截流时间
             if self.banned_list[msg.sender.user_id] + self.interval >= timestamp:
-                self.banned_list[msg.sender.user_id] += 1000 * 60 * 60 * 24
+                self.banned_list[msg.sender.user_id] += self.banned_interval
                 return
             else:
                 self.banned_list.pop(msg.sender.user_id)
