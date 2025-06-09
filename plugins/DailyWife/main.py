@@ -66,7 +66,13 @@ class DailyWife(BasePlugin):
         """, (today, group_number))
         response = await self.api.get_group_member_list(group_number)
         member_list = response["data"]
-        wife = PickWife(member_list, married_list, bot_qq.copy().append(msg.sender.user_id)).pick_wife()
+        black_list = bot_qq.copy()
+        black_list.append(str(msg.sender.user_id))
+        print(black_list)
+        wife = PickWife(member_list=member_list, married_list=married_list, blacklist=black_list).pick_wife()
+        if wife is None:
+            await msg.reply(text=f"今天大家都已经成双入对，明天务必早点来哦~")
+            return
         self.mysql.insert_data("DailyWife", [
             {
                 "qq_number": msg.sender.user_id,
