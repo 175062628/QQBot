@@ -52,6 +52,7 @@ class CS2CaseSimulator(BasePlugin):
     interval = 1000 * 60 * 60
     show_size = 5
     user_interval_map = {}
+    case_limit = 10000
 
     async def help_info(self, msg: GroupMessage):
         await msg.reply(text=f"选择武器箱(示例：开箱 梦魇武器箱 [100]/开箱 0 [100])\n当前武器箱列表{self.get_available_list()}")
@@ -59,7 +60,7 @@ class CS2CaseSimulator(BasePlugin):
     async def simulator(self, msg: GroupMessage):
         param_list = msg.raw_message.split(' ')
         target_case = param_list[-1] if param_list[-2] == "开箱" else param_list[-2]
-        case_size = 1 if param_list[-2] == "开箱" else int(param_list[-1])
+        case_size = min(1 if param_list[-2] == "开箱" else int(param_list[-1]), self.case_limit)
         timestamp = int(time.time() * 1000)
 
         if msg.sender.user_id in self.user_interval_map and timestamp - self.user_interval_map[msg.sender.user_id] < self.interval:
