@@ -51,6 +51,7 @@ class CS2CaseSimulator(BasePlugin):
         "Contraband": 6,
     }
     interval = 1000 * 60 * 60
+    banned_interval = 1000 * 60 * 60 * 24
     show_size = 5
     user_interval_map = {}
     case_limit = 1000
@@ -64,14 +65,20 @@ class CS2CaseSimulator(BasePlugin):
         case_size = min(1 if param_list[-2] == "开箱" else int(param_list[-1]), self.case_limit)
         timestamp = int(time.time() * 1000)
 
-        if msg.sender.user_id in self.banned_list and self.banned_list[msg.sender.user_id] > timestamp:
-            self.banned_list[msg.sender.user_id] += 1000 * 60 * 60 * 24
+        if (msg.sender.user_id in self.user_interval_map
+                and msg.sender.user_id not in self.banned_interval
+                and timestamp - self.user_interval_map[msg.sender.user_id] < self.interval):
+            self.banned_list[msg.sender.user_id] = timestamp
+            await msg.reply(text=f"触发截流限制，请在{self.format_seconds(int((self.user_interval_map[msg.sender.user_id] + self.interval - timestamp) / 1000))}后重试，若在此次截流期间再次触发截流，该账户将被屏蔽一天；屏蔽期间每触发一次截流，额外追加一天")
             return
 
-        if msg.sender.user_id in self.user_interval_map and timestamp - self.user_interval_map[msg.sender.user_id] < self.interval:
-            self.banned_list[msg.sender.user_id] = timestamp
-            await msg.reply(text=f"触发截流限制，请在{self.format_seconds(int((self.user_interval_map[msg.sender.user_id]+self.interval-timestamp)/1000))}后重试，若在此次截流期间再次触发截流，该账户将被屏蔽一天；屏蔽期间每触发一次截流，额外追加一天")
-            return
+        if msg.sender.user_id in self.banned_list:
+            # 没超过截流时间
+            if self.banned_list[msg.sender.user_id] + self.interval >= timestamp:
+                self.banned_list[msg.sender.user_id] += 1000 * 60 * 60 * 24
+                return
+            else:
+                self.banned_list.pop(msg.sender.user_id)
 
         if target_case not in self.case_dic:
             await msg.reply(text=f"暂不支持该武器箱，目前可用武器箱如下：{self.get_available_list()}")
@@ -89,9 +96,9 @@ class CS2CaseSimulator(BasePlugin):
 
         _iter = max(min(case_size, self.show_size), red_items)
         if min(case_size, self.show_size) >= red_items:
-            text = f"本轮开箱最好的{_iter}个物品是："
+            text = f"本轮开箱{case_size}个，最好的{_iter}个物品是："
         else:
-            text = f"本轮开箱运气爆棚，有{red_items}个红色及以上物品："
+            text = f"本轮开箱{case_size}个，运气爆棚，有{red_items}个红色及以上物品："
 
         for i in range(_iter):
             text += (f"\n物品：{sorted_items[i]['物品']}"
