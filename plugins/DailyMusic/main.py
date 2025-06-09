@@ -64,6 +64,7 @@ class DailyMusic(BasePlugin):
             records = self.mysql.execute_query(self.query_template, word)
             if len(records) == 0:
                 await msg.reply(text="接口出错，请稍后重试")
+                return
             music = random.choice(records)
             message = MessageChain([
                 Text(f"{word}\n歌名：{music['name']}\n歌手：{music['author']}"),

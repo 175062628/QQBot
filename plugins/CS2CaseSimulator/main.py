@@ -2,6 +2,7 @@ import sys
 import os
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
 from ncatbot.core import GroupMessage
+import time
 
 sys.path.append(os.path.dirname(__file__))
 from .probability import ProbabilityDistributor
@@ -15,7 +16,7 @@ bot_name = config.get("bot_name")
 
 class CS2CaseSimulator(BasePlugin):
     name = "CS2CaseSimulator" # 插件名称
-    version = "0.0.1" # 插件版本
+    version = "0.0.2" # 插件版本
     case_list = [
         "梦魇武器箱",
         "反冲武器箱",
@@ -38,25 +39,59 @@ class CS2CaseSimulator(BasePlugin):
         "突围大行动武器箱": "Operation_Breakout_Weapon",
         "5": "Operation_Breakout_Weapon",
     }
+    user_list = {}
+    value_map = {
+        "Consumer": 0,
+        "Industrial": 1,
+        "Mil-Spec": 2,
+        "Restricted": 3,
+        "Classified": 4,
+        "Covert": 5,
+        "Contraband": 6,
+    }
+    interval = 1000 * 60 * 60
+    show_size = 5
+    user_interval_map = {}
 
     async def help_info(self, msg: GroupMessage):
-        await msg.reply(text=f"选择武器箱(示例：开箱梦魇武器箱 / 开箱 0)\n当前武器箱列表{self.get_available_list()}")
+        await msg.reply(text=f"选择武器箱(示例：开箱 梦魇武器箱 [100]/开箱 0 [100])\n当前武器箱列表{self.get_available_list()}")
 
     async def simulator(self, msg: GroupMessage):
-        target_case = msg.raw_message.split(' ')[-1]
+        param_list = msg.raw_message.split(' ')
+        target_case = param_list[-1] if param_list[-2] == "开箱" else param_list[-2]
+        case_size = 1 if param_list[-2] == "开箱" else int(param_list[-1])
+        timestamp = int(time.time() * 1000)
+
+        if msg.sender.user_id in self.user_interval_map and timestamp - self.user_interval_map[msg.sender.user_id] < self.interval:
+            await msg.reply(text=f"触发截流限制，请在{self.format_seconds(int((self.user_interval_map[msg.sender.user_id]+self.interval-timestamp)/1000))}后重试")
+            return
+
         if target_case not in self.case_dic:
             await msg.reply(text=f"暂不支持该武器箱，目前可用武器箱如下：{self.get_available_list()}")
             return
-        probability_distributor = ProbabilityDistributor(f"./plugins/CS2CaseSimulator/CaseList/{self.case_dic[target_case]}.json")
-        item = probability_distributor.pick_item()
 
-        text = (f"物品：{item['物品']}\n"
-                f"品质：{item['品质']}\n"
-                f"磨损：{item['磨损']}\n"
-                f"磨损值：{item['磨损值']}\n"
-                f"模板号：{item['模板号']}")
-        if item['梯度'] is not None:
-            text += f"\n梯度：{item['梯度']}"
+        probability_distributor = ProbabilityDistributor(f"./plugins/CS2CaseSimulator/CaseList/{self.case_dic[target_case]}.json")
+        self.user_interval_map[msg.sender.user_id] = timestamp
+        items = []
+
+        for i in range(case_size):
+            items.append(probability_distributor.pick_item())
+
+        sorted_items = sorted(items, key=lambda x: -self.value_map[x['品质']])
+
+        _iter = min(case_size, self.show_size)
+        text = f"本轮开箱最好的{_iter}个物品是："
+        for i in range(_iter):
+            text += (f"\n物品：{sorted_items[i]['物品']}"
+                    f"\n品质：{sorted_items[i]['品质']}"
+                    f"\n磨损：{sorted_items[i]['磨损']}"
+                    f"\n磨损值：{sorted_items[i]['磨损值']}"
+                    f"\n模板号：{sorted_items[i]['模板号']}")
+            if sorted_items[i]['梯度'] is not None:
+                text += f"\n梯度：{sorted_items[i]['梯度']}"
+            if i != _iter - 1:
+                text += f"\n"
+
         await msg.reply(text=text)
 
     def get_available_list(self):
@@ -65,6 +100,18 @@ class CS2CaseSimulator(BasePlugin):
             text += f"\n{index} -- {value}"
         return text
 
+    @staticmethod
+    def format_seconds(seconds):
+        hours, remainder = divmod(seconds, 3600)
+        minutes, seconds = divmod(remainder, 60)
+
+        if hours > 0:
+            return f"{hours}小时{minutes:02d}分钟{seconds:02d}秒"
+        elif minutes > 0:
+            return f"{minutes}分钟{seconds:02d}秒"
+        else:
+            return f"{seconds}秒"
+
     async def on_load(self):
         # 插件加载时执行的操作, 可缺省
         print(f"{self.name} 插件已加载")
@@ -72,7 +119,7 @@ class CS2CaseSimulator(BasePlugin):
         self.register_user_func(
             "CS2CaseSimulator",
             handler=self.simulator,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱\s+.+|^开箱\s+.+",
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱\s+.+(?:\s+\d+)?$|^开箱\s+.+(?:\s+\d+)?$",
         )
         self.register_user_func(
             "CS2CaseSimulatorHelper",
