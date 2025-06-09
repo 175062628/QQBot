@@ -40,6 +40,7 @@ class CS2CaseSimulator(BasePlugin):
         "5": "Operation_Breakout_Weapon",
     }
     user_list = {}
+    banned_list = {}
     value_map = {
         "Consumer": 0,
         "Industrial": 1,
@@ -63,8 +64,13 @@ class CS2CaseSimulator(BasePlugin):
         case_size = min(1 if param_list[-2] == "开箱" else int(param_list[-1]), self.case_limit)
         timestamp = int(time.time() * 1000)
 
+        if msg.sender.user_id in self.user_interval_map and self.banned_list[msg.sender.user_id] > timestamp:
+            self.banned_list[msg.sender.user_id] += 1000 * 60 * 60 * 24
+            return
+
         if msg.sender.user_id in self.user_interval_map and timestamp - self.user_interval_map[msg.sender.user_id] < self.interval:
-            await msg.reply(text=f"触发截流限制，请在{self.format_seconds(int((self.user_interval_map[msg.sender.user_id]+self.interval-timestamp)/1000))}后重试")
+            self.banned_list[msg.sender.user_id] = timestamp
+            await msg.reply(text=f"触发截流限制，请在{self.format_seconds(int((self.user_interval_map[msg.sender.user_id]+self.interval-timestamp)/1000))}后重试，若在此次截流期间再次触发截流，该账户将被屏蔽一天；屏蔽期间每触发一次截流，额外追加一天")
             return
 
         if target_case not in self.case_dic:
