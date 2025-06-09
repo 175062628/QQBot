@@ -10,197 +10,197 @@
   "List": [
     {
       "Name": " 狂牙手套（★） | 翡翠",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "狂牙手套（★） | 针尖",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "狂牙手套（★） | 精神错乱",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "狂牙手套（★） | 黄色斑纹",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "驾驶手套（★） | 西装革履",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "驾驶手套（★） | 美洲豹女王",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "驾驶手套（★） | 绯红列赞",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "驾驶手套（★） | 雪豹",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "裹手（★） | 警告！",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "裹手（★） | 蟒蛇",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "裹手（★） | 沙漠头巾",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "裹手（★） | 长颈鹿",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "摩托手套（★） | 第三特种兵连",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "摩托手套（★） | 血压",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "摩托手套（★） | 终点线",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "摩托手套（★） | 小心烟雾弹",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "专业手套（★） | 一线特工",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "专业手套（★） | 陆军少尉长官",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "专业手套（★） | 渐变大理石",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "专业手套（★） | 老虎精英",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "运动手套（★） | 大型猎物",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "运动手套（★） | 夜行衣",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "运动手套（★） | 猩红头巾",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "运动手套（★） | 弹弓",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "False"
     },
     {
       "Name": "AWP | 迷人眼",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.7,
       "Quality": "Covert",
       "StarTrack": "True"
     },
     {
       "Name": "USP 消音版 | 印花集",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.85,
       "Quality": "Covert",
       "StarTrack": "True"
     },
     {
       "Name": "AK-47 | 可燃冰",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.77,
       "Quality": "Classified",
       "StarTrack": "True"
     },
     {
       "Name": "P250 | 迷人幻象",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.7,
       "Quality": "Classified",
       "StarTrack": "True"
     },
@@ -221,14 +221,14 @@
     {
       "Name": "M249 | 闹市区",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.65,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
     {
       "Name": "P90 | 给爷冲",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.7,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
@@ -242,7 +242,7 @@
     {
       "Name": "SG 553 | 青龙",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.7,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
@@ -256,7 +256,7 @@
     {
       "Name": "加利尔 AR | 毁灭者",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.7,
       "Quality": "Mil-Spec",
       "StarTrack": "True"
     },

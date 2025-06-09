@@ -11,7 +11,7 @@
     {
       "Name": "暗影双匕（★） | 澄澈之水",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
@@ -25,28 +25,28 @@
     {
       "Name": "暗影双匕（★） | 自由之手",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.48,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "暗影双匕（★） | 自动化",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.85,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "鲍伊猎刀（★） | 澄澈之水",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "猎杀者匕首（★） | 澄澈之水",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
@@ -67,35 +67,35 @@
     {
       "Name": "弯刀（★） | 澄澈之水",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "鲍伊猎刀（★） | 自由之手",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.48,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "猎杀者匕首（★） | 自由之手",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.48,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "弯刀（★） | 自由之手",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.48,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "暗影双匕（★） | 伽玛多普勒",
       "FloatValueMin": 0,
-      "FloatValueMax": 0.15,
+      "FloatValueMax": 0.08,
       "Quality": "Contraband",
       "StarTrack": "True",
       "TierList": {
@@ -109,7 +109,7 @@
     {
       "Name": "暗影双匕（★） | 传说",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.65,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
@@ -123,49 +123,49 @@
     {
       "Name": "弯刀（★） | 传说",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.65,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "鲍伊猎刀（★） | 自动化",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.85,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "弯刀（★） | 自动化",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.85,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "猎杀者匕首（★） | 传说",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.65,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "猎杀者匕首（★） | 自动化",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.85,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "鲍伊猎刀（★） | 传说",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.65,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "鲍伊猎刀（★） | 伽玛多普勒",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.08,
       "Quality": "Contraband",
       "StarTrack": "True",
       "TierList": {
@@ -179,7 +179,7 @@
     {
       "Name": "弯刀（★） | 伽玛多普勒",
       "FloatValueMin": 0,
-      "FloatValueMax": 0.15,
+      "FloatValueMax": 0.08,
       "Quality": "Contraband",
       "StarTrack": "True",
       "TierList": {
@@ -193,7 +193,7 @@
     {
       "Name": "猎杀者匕首（★） | 伽玛多普勒",
       "FloatValueMin": 0,
-      "FloatValueMax": 0.15,
+      "FloatValueMax": 0.08,
       "Quality": "Contraband",
       "StarTrack": "True",
       "TierList": {
@@ -207,21 +207,21 @@
     {
       "Name": "蝴蝶刀（★） | 澄澈之水",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "猎杀者匕首（★） | 自动化",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.85,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 自由之手",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.48,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
@@ -235,21 +235,21 @@
     {
       "Name": "蝴蝶刀（★） | 自动化",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.85,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 传说",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.65,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 伽玛多普勒",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.08,
       "Quality": "Contraband",
       "StarTrack": "True",
       "TierList": {
@@ -263,7 +263,7 @@
     {
       "Name": "MP9 | 星使",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.8,
       "Quality": "Covert",
       "StarTrack": "True"
     },
@@ -298,21 +298,21 @@
     {
       "Name": "USP 消音版 | 地狱门票",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.76,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
     {
       "Name": "XM1014 | 行尸攻势",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
     {
       "Name": "M4A1 消音型 | 夜无眠",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.7,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
@@ -326,7 +326,7 @@
     {
       "Name": "PP-野牛 | 太空猫",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.67,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
@@ -340,7 +340,7 @@
     {
       "Name": "SCAR-20 | 暗夜活死鸡",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.57,
       "Quality": "Mil-Spec",
       "StarTrack": "True"
     },
@@ -361,14 +361,14 @@
     {
       "Name": "MAG-7 | 先见之明",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.7,
       "Quality": "Mil-Spec",
       "StarTrack": "True"
     },
     {
       "Name": "MAC-10 | 坐牢",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.9,
       "Quality": "Mil-Spec",
       "StarTrack": "True"
     },

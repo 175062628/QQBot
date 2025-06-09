@@ -10,8 +10,8 @@
   "List": [
     {
       "Name": "蝴蝶刀（★）",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
@@ -24,8 +24,8 @@
     },
     {
       "Name": "蝴蝶刀（★） | 北方森林",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
@@ -38,50 +38,50 @@
     },
     {
       "Name": "蝴蝶刀（★） | 深红之网",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 渐变之色",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.08,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 森林 DDPAT",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 噩梦之夜",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 狩猎网格",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 枯焦之色",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "蝴蝶刀（★） | 屠夫",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.01,
+      "FloatValueMax": 0.26,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
@@ -94,29 +94,29 @@
     },
     {
       "Name": "蝴蝶刀（★） | 都市伪装",
-      "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMin": 0.06,
+      "FloatValueMax": 0.8,
       "Quality": "Contraband",
       "StarTrack": "True"
     },
     {
       "Name": "M4A1 消音型 | 次时代",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Covert",
       "StarTrack": "True"
     },
     {
       "Name": "P90 | 二西莫夫",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.92,
       "Quality": "Covert",
       "StarTrack": "True"
     },
     {
       "Name": "沙漠之鹰 | 阴谋者",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.3,
       "Quality": "Classified",
       "StarTrack": "True"
     },
@@ -130,7 +130,7 @@
     {
       "Name": "格洛克 18 型 | 水灵",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.7,
       "Quality": "Classified",
       "StarTrack": "True"
     },
@@ -144,35 +144,35 @@
     {
       "Name": "新星 | 锦鲤",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.3,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
     {
       "Name": "P250 | 超新星",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.4,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
     {
       "Name": "PP-野牛 | 死亡主宰者",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
     {
       "Name": "MP7 | 都市危机",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Restricted",
       "StarTrack": "True"
     },
     {
       "Name": "内格夫 | 沙漠精英",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.5,
       "Quality": "Mil-Spec",
       "StarTrack": "True"
     },
@@ -193,7 +193,7 @@
     {
       "Name": "UMP-45 | 迷之宫",
       "FloatValueMin": 0,
-      "FloatValueMax": 1,
+      "FloatValueMax": 0.4,
       "Quality": "Mil-Spec",
       "StarTrack": "True"
     }
