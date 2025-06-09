@@ -64,7 +64,7 @@ class CS2CaseSimulator(BasePlugin):
         case_size = min(1 if param_list[-2] == "开箱" else int(param_list[-1]), self.case_limit)
         timestamp = int(time.time() * 1000)
 
-        if msg.sender.user_id in self.user_interval_map and self.banned_list[msg.sender.user_id] > timestamp:
+        if msg.sender.user_id in self.banned_list and self.banned_list[msg.sender.user_id] > timestamp:
             self.banned_list[msg.sender.user_id] += 1000 * 60 * 60 * 24
             return
 
