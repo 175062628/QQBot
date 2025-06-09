@@ -19,6 +19,10 @@ bot_name = config.get("bot_name")
 class DailyMusic(BasePlugin):
     name = "DailyMusic" # 插件名称
     version = "0.0.1" # 插件版本
+    author = "Ethan Ye"
+    info = "今日歌曲，使用方式：[@Bot ]今日(热歌|新歌|原创|飙升)榜"
+    description = "今日歌曲，适用于私聊和群聊"
+
     api_url = "https://api.vvhan.com/api/wyMusic/"
     mysql = MySQLAssistant(config_file="config.yaml")
     create_table_sql = """

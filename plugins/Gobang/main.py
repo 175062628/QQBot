@@ -18,6 +18,17 @@ bot_name = config.get("bot_name")
 class GoBang(BasePlugin):
     name = "GoBang" # 插件名称
     version = "0.0.1" # 插件版本
+    author = "Ethan Ye"
+    info = """五子棋，使用方式：
+创建游戏：[@Bot ]五子棋
+与创建人对弈：[@Bot ]对弈
+开始游戏：[@Bot ]启动
+落子：[@Bot ]横坐标 纵坐标 示例：[@Bot ]3 1
+投降：[@Bot ]投降
+退出游戏：[@Bot ]退出
+"""
+    description = "五子棋，适用于群聊"
+
     game = None
     player = None
     rival = None

@@ -20,6 +20,10 @@ bot_name = config.get("bot_name")
 class DailyLuck(BasePlugin):
     name = "DailyLuck" # 插件名称
     version = "0.0.1" # 插件版本
+    author = "Ethan Ye"
+    info = "今日运势，使用方式：\n查看运势：[@Bot ]今日运势\n修改运势：[@Bot ]逆天改命"
+    description = "今日运势，适用于私聊和群聊"
+
     mysql = MySQLAssistant(config_file="config.yaml")
     api_uri = "https://api.milimoe.com/userdaily/get/"
     image_api = "https://acg.yaohud.cn/dm/acg.php?return=url"

@@ -26,6 +26,10 @@ bot_name = config.get("bot_name")
 class DailyWife(BasePlugin):
     name = "DailyWife" # 插件名称
     version = "0.0.1" # 插件版本
+    author = "Ethan Ye"
+    info = "今日老婆，使用方式：[@Bot ]今日老婆"
+    description = "今日老婆，适用于群聊"
+
     mysql = MySQLAssistant(config_file="config.yaml")
     create_table_sql = """
     CREATE TABLE IF NOT EXISTS DailyWife (

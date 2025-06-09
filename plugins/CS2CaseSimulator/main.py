@@ -17,6 +17,10 @@ bot_name = config.get("bot_name")
 class CS2CaseSimulator(BasePlugin):
     name = "CS2CaseSimulator" # 插件名称
     version = "0.0.2" # 插件版本
+    author = "Ethan Ye"
+    info = "CS:GO开箱模拟器，使用方式：[@Bot ]开箱 (梦魇武器箱|0) [开箱数]"
+    description = "CS:GO开箱模拟器，适用于私聊和群聊"
+
     case_list = [
         "梦魇武器箱",
         "反冲武器箱",
@@ -57,7 +61,7 @@ class CS2CaseSimulator(BasePlugin):
     case_limit = 1000
 
     async def help_info(self, msg: GroupMessage):
-        await msg.reply(text=f"选择武器箱(示例：开箱 梦魇武器箱 [100]/开箱 0 [100])\n当前武器箱列表{self.get_available_list()}")
+        await msg.reply(text=f"选择武器箱(示例：[@Bot ]开箱 (梦魇武器箱|0) [开箱数])\n当前武器箱列表{self.get_available_list()}")
 
     async def simulator(self, msg: GroupMessage):
         param_list = msg.raw_message.split(' ')
