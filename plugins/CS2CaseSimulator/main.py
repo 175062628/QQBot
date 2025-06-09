@@ -79,9 +79,14 @@ class CS2CaseSimulator(BasePlugin):
             items.append(probability_distributor.pick_item())
 
         sorted_items = sorted(items, key=lambda x: -self.value_map[x['品质']])
+        red_items = sum(1 for x in sorted_items if self.value_map[x['品质']] >= 5)
 
-        _iter = min(case_size, self.show_size)
-        text = f"本轮开箱最好的{_iter}个物品是："
+        _iter = max(min(case_size, self.show_size), red_items)
+        if min(case_size, self.show_size) >= red_items:
+            text = f"本轮开箱最好的{_iter}个物品是："
+        else:
+            text = f"本轮开箱运气爆棚，有{red_items}个红色及以上物品："
+
         for i in range(_iter):
             text += (f"\n物品：{sorted_items[i]['物品']}"
                     f"\n品质：{sorted_items[i]['品质']}"
