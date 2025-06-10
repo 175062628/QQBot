@@ -65,7 +65,7 @@ class PoemGenerator:
                 else:
                     input_tensor = torch.tensor([[next_idx]], dtype=torch.long)
             line = ''.join([self.idx_to_char[idx] for idx in input_seq])
-            poem += line + '\n' if i-1 != len(keywords) else ''
+            poem += line + ('\n' if i-1 != len(keywords) else '')
         return True, poem
 
     def upload_model(self):
