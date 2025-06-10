@@ -47,7 +47,7 @@ class PoemGenerator:
 
         poem = ""
         hidden = None
-        for keyword in keywords:
+        for i, keyword in enumerate(keywords):
             keyword_idx = self.char_to_idx[keyword]
             input_seq = [keyword_idx]
             if self.device == 'cuda':
@@ -65,7 +65,7 @@ class PoemGenerator:
                 else:
                     input_tensor = torch.tensor([[next_idx]], dtype=torch.long)
             line = ''.join([self.idx_to_char[idx] for idx in input_seq])
-            poem += line + '\n'
+            poem += line + '\n' if i != len(keywords) else ''
         return True, poem
 
     def upload_model(self):
