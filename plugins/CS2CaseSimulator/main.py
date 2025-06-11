@@ -3,6 +3,7 @@ import os
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
 from ncatbot.core import GroupMessage
 import time
+import re
 
 sys.path.append(os.path.dirname(__file__))
 from .probability import ProbabilityDistributor
@@ -77,8 +78,8 @@ class CS2CaseSimulator(BasePlugin):
             return
 
         if msg.sender.user_id in self.banned_list:
-            # 没超过截流时间
-            if self.banned_list[msg.sender.user_id] + self.interval >= timestamp:
+            if (timestamp - self.user_interval_map[msg.sender.user_id] < self.interval
+                    or self.banned_list[msg.sender.user_id] > timestamp):
                 self.banned_list[msg.sender.user_id] += self.banned_interval
                 return
             else:
@@ -117,6 +118,13 @@ class CS2CaseSimulator(BasePlugin):
 
         await msg.reply(text=text)
 
+    async def free_list(self, msg: GroupMessage):
+        pattern = r'qq=(\d+)'
+        qq_numbers = re.findall(pattern, msg.raw_message)
+        for qq in qq_numbers:
+            self.banned_list.pop(int(qq), None)
+            self.user_interval_map.pop(int(qq), None)
+
     def get_available_list(self):
         text = ""
         for index, value in enumerate(self.case_list):
@@ -148,4 +156,9 @@ class CS2CaseSimulator(BasePlugin):
             "CS2CaseSimulatorHelper",
             handler=self.help_info,
             regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱$|^开箱$",
+        )
+        self.register_admin_func(
+            "CS2CaseSimulatorAdmin",
+            handler=self.free_list,
+            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱赦免(?:\[CQ:at,qq=.+\])+$|^开箱赦免(?:\[CQ:at,qq=.+\])+$",
         )
