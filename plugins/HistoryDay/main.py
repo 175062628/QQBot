@@ -41,12 +41,18 @@ class HistoryDay(BasePlugin):
         'death': "逝世",
         'festival': "节假日"
     }
+    insert_map = {
+        "大事记": 'affair',
+        "出生": 'birth',
+        "逝世": 'death',
+        "节假日": 'festival'
+    }
 
     async def get_today_on_history(self, msg: GroupMessage):
         pattern = f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?那年今日(?:\s+(-?\d+)(?:\s+(-?\d+))?)?$"
         match = re.match(pattern, msg.raw_message)
         now = datetime.now()
-        last_year = now.year-1
+        last_year = now.year
         month = now.month
         day = now.day
         start_year = 0
@@ -71,7 +77,6 @@ class HistoryDay(BasePlugin):
                 start_year = int(year1)
                 end_year = int(year2)
 
-        print(start_year, end_year)
         records = self.mysql.execute_query(self.query_template, (start_year, end_year, month, day))
         for record in records:
             affair_map[record['type']].append(f"{str(record['year'])+'：' if record['year'] != 0 else ''}{record['affair']}")
@@ -83,6 +88,21 @@ class HistoryDay(BasePlugin):
 
         await msg.reply(text=text)
 
+    async def insert_history(self, msg: GroupMessage):
+        args = msg.raw_message.split(' ', 2)
+        story = args[-1]
+        affair_type = self.insert_map[args[-2]]
+        now = datetime.now()
+        data = {
+            'year': now.year,
+            'month': now.month,
+            'day': now.day,
+            'affair': story,
+            'type': affair_type
+        }
+        self.mysql.insert_data('history_affair', [data])
+        print('success')
+
     async def on_load(self):
         # 插件加载时执行的操作, 可缺省
         print(f"{self.name} 插件已加载")
@@ -91,4 +111,9 @@ class HistoryDay(BasePlugin):
             "HistoryDay",
             handler=self.get_today_on_history,
             regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?那年今日(?:\s+(-?\d+)(?:\s+(-?\d+))?)?$",
+        )
+        self.register_user_func(
+            "InsertHistory",
+            handler=self.insert_history,
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?载入历史\s+(?:大事记|出生|逝世|节假日)\s+.+$",
         )
