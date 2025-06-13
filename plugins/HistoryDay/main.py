@@ -94,6 +94,7 @@ class HistoryDay(BasePlugin):
         args = msg.raw_message.split(' ', 2)
         story = args[-1]
         if args[-2] not in self.insert_map:
+            await msg.reply(text="使用方式：[@Bot ]载入历史 (大事记|出生|逝世|节假日) 事件")
             return
         affair_type = self.insert_map[args[-2]]
         now = datetime.now()
