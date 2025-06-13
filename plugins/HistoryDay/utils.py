@@ -1,3 +1,5 @@
+import sys
+
 import requests
 from bs4 import BeautifulSoup, Tag
 import time
@@ -30,6 +32,7 @@ def import_csv_to_mysql(csv_file):
         password = config.get('password')
         database = config.get('database')
         table = 'history_affair'
+        end_line = '\r\n' if sys.platform.startswith('win') else '\n'
         print(f"文件是否存在: {os.path.exists(csv_file)}")
         print(f"文件权限: {os.access(csv_file, os.R_OK)}")
 
@@ -39,11 +42,8 @@ def import_csv_to_mysql(csv_file):
             password=password,
             database=database,
             client_flag=CLIENT.LOCAL_FILES,
-            local_infile=True  # 显式启用本地加载
+            local_infile=True
         )
-        with open(csv_file, 'r', encoding='utf-8') as f:
-            first_line = f.readline()
-            print(f"CSV首行: {first_line.strip()}")
 
         with conn.cursor() as cursor:
             cursor.execute("SHOW VARIABLES LIKE 'local_infile'")
@@ -52,7 +52,6 @@ def import_csv_to_mysql(csv_file):
             if result[1] != 'ON':
                 print("正在启用local_infile...")
                 cursor.execute("SET GLOBAL local_infile = ON")
-                cursor.execute("SET SESSION local_infile = ON")
                 cursor.execute("SHOW VARIABLES LIKE 'local_infile'")
                 new_result = cursor.fetchone()
                 print(f"启用后状态: {new_result[1]}")
@@ -72,9 +71,8 @@ def import_csv_to_mysql(csv_file):
             LOAD DATA LOCAL INFILE '{csv_file}'
             INTO TABLE `{table}`
             FIELDS TERMINATED BY ','
-            LINES TERMINATED BY '\r\n'
+            LINES TERMINATED BY '{end_line}'
             IGNORE 1 ROWS
-            (`year`, `month`, `day`, `affair`, `type`)
             """
             cursor.execute(load_data_sql)
             conn.commit()
