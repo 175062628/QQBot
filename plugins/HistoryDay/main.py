@@ -21,8 +21,10 @@ class HistoryDay(BasePlugin):
     name = "HistoryDay" # 插件名称
     version = "0.0.1" # 插件版本
     author = "Ethan Ye"
-    info = "那件今日，使用方式：[@Bot ]那年今日[ 起始年份][ 结束年份]"
-    description = "那件今日，适用于私聊和群聊"
+    info = ("""那年今日，使用方式：
+查看历史上的今天：[@Bot ]那年今日[ 起始年份][ 结束年份]
+改写今天的历史：[@Bot ]载入历史 (大事记|出生|逝世|节假日) 事件""")
+    description = "那年今日，适用于私聊和群聊"
     mysql = MySQLAssistant(config_file="config.yaml")
     query_template = """
     SELECT year, month, day, affair, type FROM history_affair
