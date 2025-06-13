@@ -30,6 +30,8 @@ def import_csv_to_mysql(csv_file):
         password = config.get('password')
         database = config.get('database')
         table = 'history_affair'
+        print(f"文件是否存在: {os.path.exists(csv_file)}")
+        print(f"文件权限: {os.access(csv_file, os.R_OK)}")
 
         conn = pymysql.connect(
             host=host,
@@ -84,7 +86,6 @@ def import_csv_to_mysql(csv_file):
 
             # 提交事务并获取导入行数
             conn.commit()
-            print("插入成功")
 
     except pymysql.Error as e:
         print(f"数据库错误: {e}")
