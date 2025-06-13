@@ -36,5 +36,5 @@ class Poem(BasePlugin):
         self.register_user_func(
             "Poem",
             handler=self.generate_poem,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+藏头诗\s+.+$|^藏头诗\s+.+$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?藏头诗\s+.+$",
         )

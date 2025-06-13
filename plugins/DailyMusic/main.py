@@ -94,5 +94,5 @@ class DailyMusic(BasePlugin):
         self.register_user_func(
             "DailyMusic",
             handler=self.get_top_music,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+(今日(?:热歌|新歌|原创|飙升)榜)$|^(今日(?:热歌|新歌|原创|飙升)榜)$"
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?(今日(?:热歌|新歌|原创|飙升)榜)$"
         )

@@ -33,6 +33,7 @@ class HistoryDay(BasePlugin):
     AND month = %s
     AND day = %s 
     order by year
+    LIMIT 20
     """
     keyword_map = {
         'affair': "大事记",
@@ -42,7 +43,7 @@ class HistoryDay(BasePlugin):
     }
 
     async def get_today_on_history(self, msg: GroupMessage):
-        pattern = f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+那年今日(?:\s+(-?\d+)(?:\s+(-?\d+))?)?$|^那年今日(?:\s+(-?\d+)(?:\s+(-?\d+))?)?$"
+        pattern = f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?那年今日(?:\s+(-?\d+)(?:\s+(-?\d+))?)?$"
         match = re.match(pattern, msg.raw_message)
         now = datetime.now()
         last_year = now.year-1
@@ -56,7 +57,7 @@ class HistoryDay(BasePlugin):
             'death': [],
             'festival': []
         }
-        text = "那件今日，发生了以下大事"
+        text = "那年今日，发生了以下大事"
         if match:
             year1 = match.group(1)
             year2 = match.group(2)
@@ -70,9 +71,10 @@ class HistoryDay(BasePlugin):
                 start_year = int(year1)
                 end_year = int(year2)
 
+        print(start_year, end_year)
         records = self.mysql.execute_query(self.query_template, (start_year, end_year, month, day))
         for record in records:
-            affair_map[record['type']].append(f"{record['year']+'：' if record['year'] != 0 else ''}{record['affair']}")
+            affair_map[record['type']].append(f"{str(record['year'])+'：' if record['year'] != 0 else ''}{record['affair']}")
         for k, v in affair_map.items():
             if len(v):
                 text += f"\n{self.keyword_map[k]}"
@@ -88,5 +90,5 @@ class HistoryDay(BasePlugin):
         self.register_user_func(
             "HistoryDay",
             handler=self.get_today_on_history,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+那年今日(?:\s+(-?\d+)(?:\s+(-?\d+))?)?$|^那年今日(?:\s+(-?\d+)(?:\s+(-?\d+))?)?$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?那年今日(?:\s+(-?\d+)(?:\s+(-?\d+))?)?$",
         )

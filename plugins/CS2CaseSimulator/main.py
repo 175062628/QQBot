@@ -150,15 +150,15 @@ class CS2CaseSimulator(BasePlugin):
         self.register_user_func(
             "CS2CaseSimulator",
             handler=self.simulator,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱\s+.+(?:\s+\d+)?$|^开箱\s+.+(?:\s+\d+)?$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?开箱\s+.+(?:\s+\d+)?$",
         )
         self.register_user_func(
             "CS2CaseSimulatorHelper",
             handler=self.help_info,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱$|^开箱$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?开箱$",
         )
         self.register_admin_func(
             "CS2CaseSimulatorAdmin",
             handler=self.free_list,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+开箱赦免(?:\[CQ:at,qq=.+\])+$|^开箱赦免(?:\[CQ:at,qq=.+\])+$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?开箱赦免(?:\[CQ:at,qq=.+\])+$",
         )

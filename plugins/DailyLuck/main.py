@@ -94,10 +94,10 @@ class DailyLuck(BasePlugin):
         self.register_user_func(
             "DailyLuck",
             handler=self.daily_luck,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+今日运势$|^今日运势$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?今日运势$",
         )
         self.register_user_func(
             "ChangeLuck",
             handler=self.change_luck,
-            regex=f"^(?:\[CQ:at,qq=={bot_id}\]|@{bot_name})\s+逆天改命$|^逆天改命$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?逆天改命$",
         )

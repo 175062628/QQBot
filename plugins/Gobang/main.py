@@ -123,30 +123,30 @@ class GoBang(BasePlugin):
         self.register_user_func(
             "NewGame",
             handler=self.new_game,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+五子棋$|^五子棋$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?五子棋$",
         )
         self.register_user_func(
             "PlayGame",
             handler=self.play_game,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+对弈$|^对弈$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?对弈$",
         )
         self.register_user_func(
             "StartGame",
             handler=self.start_game,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+启动$|^启动$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?启动$",
         )
         self.register_user_func(
             "ChessDown",
             handler=self.chess_down,
-            regex=f"(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+\d+\s+\d+$|^\d+\s+\d+",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?\d+\s+\d+$",
         )
         self.register_user_func(
             "GiveUp",
             handler=self.give_up,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+投降$|^投降$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?投降$",
         )
         self.register_user_func(
             "QuitGame",
             handler=self.quit_game,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+退出$|^退出$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?退出$",
         )

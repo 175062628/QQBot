@@ -102,5 +102,5 @@ class DailyWife(BasePlugin):
         self.register_user_func(
             "DailyWife",
             handler=self.daily_wife,
-            regex=f"^(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+今日老婆$|^今日老婆$",
+            regex=f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?今日老婆$",
         )
