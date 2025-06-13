@@ -69,7 +69,6 @@ def import_csv_to_mysql(csv_file):
             LOAD DATA LOCAL INFILE '{csv_file}'
             INTO TABLE `{table}`
             FIELDS TERMINATED BY ','
-            ENCLOSED BY '"'
             LINES TERMINATED BY '\r\n'
             IGNORE 1 ROWS
             (`year`, `month`, `day`, `affair`, `type`)
