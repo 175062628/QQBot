@@ -41,6 +41,9 @@ def import_csv_to_mysql(csv_file):
             client_flag=CLIENT.LOCAL_FILES,
             local_infile=True  # 显式启用本地加载
         )
+        with open(csv_file, 'r', encoding='utf-8') as f:
+            first_line = f.readline()
+            print(f"CSV首行: {first_line.strip()}")
 
         with conn.cursor() as cursor:
             cursor.execute("SHOW VARIABLES LIKE 'local_infile'")
