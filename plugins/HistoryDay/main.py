@@ -93,6 +93,8 @@ class HistoryDay(BasePlugin):
     async def insert_history(self, msg: GroupMessage):
         args = msg.raw_message.split(' ', 2)
         story = args[-1]
+        if args[-2] not in self.insert_map:
+            return
         affair_type = self.insert_map[args[-2]]
         now = datetime.now()
         data = {
