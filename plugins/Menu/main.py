@@ -57,5 +57,5 @@ class Menu(BasePlugin):
                 "info": self.info,
             },
             handler = self.menu,
-            regex = f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?\s+菜单$",
+            regex = f"^(?:(?:\[CQ:at,qq={bot_id}\]|@{bot_name})\s+)?菜单$",
         )
