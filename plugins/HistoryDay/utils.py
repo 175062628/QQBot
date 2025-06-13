@@ -81,7 +81,7 @@ def import_csv_to_mysql(csv_file):
 
             # 提交事务并获取导入行数
             conn.commit()
-            row_count = cursor.rowcount
+            print("插入成功")
 
     except pymysql.Error as e:
         print(f"数据库错误: {e}")
