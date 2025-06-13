@@ -73,6 +73,9 @@ def import_csv_to_mysql(csv_file):
             (`year`, `month`, `day`, `affair`, `type`)
             """
             cursor.execute(load_data_sql)
+            conn.commit()
+            row_count = cursor.rowcount
+            print(f"插入{row_count}条记录")
 
             cursor.execute("""update history_affair
             set type = 'affair'
