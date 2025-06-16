@@ -102,12 +102,12 @@ class What2Eat(BasePlugin):
                 f"[CQ:image,summary=[图片],url={url}]"
                 for url in temp["images"]
                 if url
-            ])
+            ]) if temp["images"] != [] else None
 
         formatted = [
             f"{self.praser_map[key]}{value}"
             for key, value in res.items()
-            if value is not None and value is not []
+            if value is not None
         ]
         return '\n'.join(formatted)
 
