@@ -51,6 +51,7 @@ class DailyWife(BasePlugin):
     async def daily_wife(self, msg: GroupMessage):
         if msg.message_type != "group":
             return
+        self.mysql.connect()
         self.mysql.create_table_if_not_exists("DailyWife", create_table_sql=self.create_table_sql)
         qq_number = msg.sender.user_id
         today = date.today()

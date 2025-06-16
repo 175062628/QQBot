@@ -78,7 +78,7 @@ class HistoryDay(BasePlugin):
             else:
                 start_year = int(year1)
                 end_year = int(year2)
-
+        self.mysql.connect()
         records = self.mysql.execute_query(self.query_template, (start_year, end_year, month, day))
         self.mysql.disconnect()
         for record in records:
@@ -106,6 +106,7 @@ class HistoryDay(BasePlugin):
             'affair': story,
             'type': affair_type
         }
+        self.mysql.connect()
         self.mysql.insert_data('history_affair', [data])
         self.mysql.disconnect()
 

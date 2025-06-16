@@ -51,6 +51,7 @@ class DailyLuck(BasePlugin):
     """
 
     async def daily_luck(self, msg: GroupMessage):
+        self.mysql.connect()
         self.mysql.create_table_if_not_exists("DailyLuck", create_table_sql=self.create_table_sql)
         qq_number = msg.sender.user_id
         today = date.today()
@@ -70,6 +71,7 @@ class DailyLuck(BasePlugin):
         await msg.reply(text=f"{result['description']}", image=image)
 
     async def change_luck(self, msg: GroupMessage):
+        self.mysql.connect()
         self.mysql.create_table_if_not_exists("DailyLuck", create_table_sql=self.create_table_sql)
         qq_number = msg.sender.user_id
         today = date.today()
