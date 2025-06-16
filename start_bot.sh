@@ -18,6 +18,7 @@ if [ ! -d "QQBot" ]; then
 fi
 
 echo -e "${GREEN}[信息]${NC} 正在创建tmux会话: $SESSION_NAME"
+tmux kill-session -t "$SESSION_NAME"
 tmux new-session -d -s "$SESSION_NAME"
 
 tmux send-keys -t "$SESSION_NAME" "echo '===== 启动XVFB+QQ =====' > $QQ_LOG 2>&1" Enter
