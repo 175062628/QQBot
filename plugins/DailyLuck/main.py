@@ -66,6 +66,7 @@ class DailyLuck(BasePlugin):
         result["changed"] = "False"
 
         self.mysql.insert_data("DailyLuck", [result])
+        self.mysql.disconnect()
         await msg.reply(text=f"{result['description']}", image=image)
 
     async def change_luck(self, msg: GroupMessage):
@@ -85,6 +86,7 @@ class DailyLuck(BasePlugin):
         result["changed"] = "True"
 
         self.mysql.update_data(self.update_template, (qq_number, today), [result])
+        self.mysql.disconnect()
         await msg.reply(text=f"{result['description']}", image=image)
 
     async def on_load(self):

@@ -87,6 +87,7 @@ class DailyWife(BasePlugin):
                 "group_number": group_number
             },
         ])
+        self.mysql.disconnect()
         await msg.reply(text=self.show_wife(wife), at=wife['user_id'])
 
     @staticmethod

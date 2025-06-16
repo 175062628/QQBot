@@ -80,11 +80,12 @@ class HistoryDay(BasePlugin):
                 end_year = int(year2)
 
         records = self.mysql.execute_query(self.query_template, (start_year, end_year, month, day))
+        self.mysql.disconnect()
         for record in records:
             affair_map[record['type']].append(f"{str(record['year'])+'：' if record['year'] != 0 else ''}{record['affair']}")
         for k, v in affair_map.items():
             if len(v):
-                text += f"\n{self.keyword_map[k]}"
+                text += f"\n\n{self.keyword_map[k]}"
             for affair in v:
                 text += f"\n{affair}"
 
@@ -106,7 +107,7 @@ class HistoryDay(BasePlugin):
             'type': affair_type
         }
         self.mysql.insert_data('history_affair', [data])
-        print('success')
+        self.mysql.disconnect()
 
     async def on_load(self):
         # 插件加载时执行的操作, 可缺省
