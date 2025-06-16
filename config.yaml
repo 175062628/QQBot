@@ -4,3 +4,4 @@ host: localhost
 user: root
 password: Yx030411
 database: QQBot
+gaode_map_key: 020b244c6a49beca42dba74814338786
