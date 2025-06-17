@@ -24,7 +24,7 @@ def load_config_from_yaml(config_file):
         print(f"加载配置文件时出错: {e}")
         return {}
 
-def import_csv_to_mysql(csv_file):
+def import_csv_to_mysql(csv_file, delimiter='|'):
     config = load_config_from_yaml("config.yaml")
     try:
         host = config.get('host', 'localhost')
@@ -58,11 +58,11 @@ def import_csv_to_mysql(csv_file):
 
             create_table_sql = f"""
             CREATE TABLE IF NOT EXISTS `{table}` (
-                `year` INT,
                 `month` INT,
                 `day` INT,
-                `affair` VARCHAR(255) NOT NULL,
-                `type` VARCHAR(16) NOT NULL
+                `type` VARCHAR(16) NOT NULL,
+                `year` INT,
+                `affair` VARCHAR(255) NOT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
             """
             cursor.execute(create_table_sql)
@@ -70,7 +70,7 @@ def import_csv_to_mysql(csv_file):
             load_data_sql = f"""
             LOAD DATA LOCAL INFILE '{csv_file}'
             INTO TABLE `{table}`
-            FIELDS TERMINATED BY ','
+            FIELDS TERMINATED BY '{delimiter}'
             LINES TERMINATED BY '{end_line}'
             IGNORE 1 ROWS
             """
@@ -172,7 +172,7 @@ def line_praser(text, affair_type, month, day):
             "type": affair_type
         }
 
-def json_to_csv(json_data, csv_file_path, month ,day, bad_list):
+def json_to_csv(json_data, csv_file_path, month ,day, bad_list, delimiter='|'):
     """将JSON数据写入CSV文件"""
     if not json_data:
         print("错误：JSON数据为空")
@@ -180,16 +180,18 @@ def json_to_csv(json_data, csv_file_path, month ,day, bad_list):
 
     try:
         # 获取JSON数据的键作为CSV的列名
-        fieldnames = json_data[0].keys() if json_data else []
+        fieldnames = set()
+        for item in json_data:
+            fieldnames.update(item.keys())
+        fieldnames = list(fieldnames)
 
-        # 打开CSV文件并写入数据
         with open(csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-            # 写入表头
+            writer = csv.DictWriter(
+                csvfile,
+                fieldnames=fieldnames,
+                delimiter=delimiter
+            )
             writer.writeheader()
-
-            # 写入数据行
             writer.writerows(json_data)
         return True
 
@@ -198,7 +200,7 @@ def json_to_csv(json_data, csv_file_path, month ,day, bad_list):
         print(f"写入CSV时出错: {e}, {month}月{day}日")
         return False
 
-def merge_affair_csvs(input_dir, output_file='merged_affair.csv'):
+def merge_affair_csvs(input_dir, output_file='merged_affair.csv', delimiter='|'):
     input_dir = os.path.join(input_dir, '')
     csv_files = glob.glob(f"{input_dir}/affair*.csv")
     if not csv_files:
@@ -209,7 +211,7 @@ def merge_affair_csvs(input_dir, output_file='merged_affair.csv'):
     all_data = pd.DataFrame()
     for file in csv_files:
         try:
-            df = pd.read_csv(file)
+            df = pd.read_csv(file, delimiter=delimiter)
             if df.empty:
                 print(f"文件 {file} 为空，已跳过")
                 continue
@@ -224,7 +226,7 @@ def merge_affair_csvs(input_dir, output_file='merged_affair.csv'):
 
     # 如果合并后的数据不为空，则保存到输出文件
     if not all_data.empty:
-        all_data.to_csv(output_file, index=False)
+        all_data.to_csv(output_file, index=False, sep=delimiter)
         print(f"合并完成! 数据已保存到 {output_file}")
         print(f"合并后的数据包含 {len(all_data)} 行")
         return True
