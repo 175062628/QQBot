@@ -38,7 +38,6 @@ def send_request(
             json=json,
             timeout=timeout
         )
-        print(response.json())
 
     except RequestException:
         return function + "接口异常，请稍后重试"
