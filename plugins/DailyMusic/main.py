@@ -11,7 +11,7 @@ from mysql_assistant import MySQLAssistant
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
-from utils import load_config_from_yaml
+from utils import load_config_from_yaml, send_request
 config = load_config_from_yaml("config.yaml")
 bot_id = config.get("bot_id")
 bot_name = config.get("bot_name")
@@ -27,7 +27,7 @@ class DailyMusic(BasePlugin):
     mysql = MySQLAssistant(config_file="config.yaml")
     create_table_sql = """
         CREATE TABLE IF NOT EXISTS DailyMusic (
-            id INT PRIMARY KEY,
+            id VARCHAR(16) PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             author VARCHAR(255) NOT NULL,
             type VARCHAR(8),
@@ -37,37 +37,33 @@ class DailyMusic(BasePlugin):
         """
     query_template = """
         SELECT * FROM DailyMusic
-        AND type = %s
+        WHERE type = %s
         """
 
-    def music(self, word):
-        try:
-            response = requests.get(f"{self.api_url}{word[-3:]}?type=json").json()["info"]
-        except requests.exceptions.RequestException as e:
-            print(f"请求失败: {e}")
-            return {
-                "status": "fail"
-            }
+    def music(self, word) -> dict|str:
+        response = send_request('GET', f"{self.api_url}{word[-3:]}?type=json", 'Daily_Top_Music')
+        if isinstance(response, str):
+            return response
 
-        result = {
+        response = response["info"]
+        return {
             "id": response["id"],
             "name": response["name"],
             "author": response["auther"],
             "image": response["pic_url"],
             "music": response["url"],
             "type": word,
-            "status": "success"
         }
-        return result
+
 
     async def get_top_music(self, msg: GroupMessage):
         self.mysql.create_table_if_not_exists("DailyMusic", create_table_sql=self.create_table_sql)
         word = msg.raw_message.split(' ')[-1]
         music = self.music(word)
-        if music["status"] == "fail":
+        if isinstance(music, str):
             records = self.mysql.execute_query(self.query_template, word)
             if len(records) == 0:
-                await msg.reply(text="接口出错，请稍后重试")
+                await msg.reply(text=f"{music}")
                 return
             music = random.choice(records)
             message = MessageChain([

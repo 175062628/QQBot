@@ -12,7 +12,7 @@ from .explain import Explain
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
-from utils import load_config_from_yaml
+from utils import load_config_from_yaml, send_request
 config = load_config_from_yaml("config.yaml")
 bot_id = config.get("bot_id")
 bot_name = config.get("bot_name")
@@ -26,7 +26,7 @@ class DailyLuck(BasePlugin):
 
     mysql = MySQLAssistant(config_file="config.yaml")
     api_uri = "https://api.milimoe.com/userdaily/get/"
-    image_api = "https://acg.yaohud.cn/dm/acg.php?return=url"
+    image_api = "https://acg.yaohud.cn/dm/acg.php?return=json"
     change_luck_api = "https://api.milimoe.com/userdaily/remove/"
     create_table_sql = """
     CREATE TABLE IF NOT EXISTS DailyLuck (
@@ -55,20 +55,28 @@ class DailyLuck(BasePlugin):
         self.mysql.create_table_if_not_exists("DailyLuck", create_table_sql=self.create_table_sql)
         qq_number = msg.sender.user_id
         today = date.today()
-        image = requests.post(self.image_api).text
+        image_response = send_request('POST', self.image_api, "Daily_Luck_Image")
+        image = None
+        if isinstance(image_response, dict):
+            image = image_response['acgurl']
+
         records = self.mysql.execute_query(self.query_template, (qq_number, today))
         if len(records) != 0:
             await msg.reply(text=f"{records[0]['description']}", image=image)
             return
 
-        result = Explain(requests.post(f"{self.api_uri}{qq_number}").json()).get_res()
+        luck_response = send_request('POST', f"{self.api_uri}{qq_number}", "Daily_Luck")
+        if isinstance(luck_response, str):
+            await msg.reply(text=f"{luck_response}", image=image)
+            return
+
+        result = Explain(luck_response).get_res()
         result["qq_number"] = qq_number
         result["date"] = today
         result["changed"] = "False"
-
         self.mysql.insert_data("DailyLuck", [result])
         self.mysql.disconnect()
-        await msg.reply(text=f"{result['description']}", image=image)
+        await msg.reply(text=f"{result['description']}{image_response if image is None else None}", image=image)
 
     async def change_luck(self, msg: GroupMessage):
         self.mysql.connect()
@@ -82,14 +90,22 @@ class DailyLuck(BasePlugin):
         if records[0]["changed"] == "True":
             await msg.reply(text=f"今天已经改过运了，贪心不足蛇吞象，小心神明大人降下惩罚")
             return
-        requests.post(f"{self.change_luck_api}{qq_number}")
-        image = requests.post(self.image_api).text
-        result = Explain(requests.post(f"{self.api_uri}{qq_number}").json()).get_res()
-        result["changed"] = "True"
 
+        image_response = send_request('POST', self.image_api, "Daily_Luck_Image")
+        image = None
+        if isinstance(image_response, dict):
+            image = image_response['acgurl']
+
+        luck_response = send_request('POST', f"{self.change_luck_api}{qq_number}", "Change_Luck")
+        if isinstance(luck_response, str):
+            await msg.reply(text=f"{luck_response}{image_response if image is None else None}", image=image)
+            return
+
+        result = Explain(luck_response).get_res()
+        result["changed"] = "True"
         self.mysql.update_data(self.update_template, (qq_number, today), [result])
         self.mysql.disconnect()
-        await msg.reply(text=f"{result['description']}", image=image)
+        await msg.reply(text=f"{result['description']}{image_response if image is None else None}", image=image)
 
     async def on_load(self):
         # 插件加载时执行的操作, 可缺省
