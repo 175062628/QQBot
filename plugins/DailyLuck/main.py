@@ -91,7 +91,7 @@ class DailyLuck(BasePlugin):
         if isinstance(image_response, dict):
             image = image_response['acgurl']
 
-        result = self.get_description(qq_number, today, "False")
+        result = self.get_description(qq_number, today, "True")
         self.mysql.update_data(self.update_template, (qq_number, today), [result])
         self.mysql.disconnect()
         await msg.reply(text=f"{result['luck']}\n{result['description']}\n{image_response if image is None else ''}",
