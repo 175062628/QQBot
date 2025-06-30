@@ -1,14 +1,12 @@
 import os
 import sys
-from datetime import date
-import requests
-
+from datetime import date, datetime
+import random
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
 from ncatbot.core import GroupMessage
-
+import numpy as np
 sys.path.append(os.path.dirname(__file__))
 from mysql_assistant import MySQLAssistant
-from .explain import Explain
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
@@ -25,15 +23,13 @@ class DailyLuck(BasePlugin):
     description = "今日运势，适用于私聊和群聊"
 
     mysql = MySQLAssistant(config_file="config.yaml")
-    api_uri = "https://api.milimoe.com/userdaily/get/"
     image_api = "https://acg.yaohud.cn/dm/acg.php?return=json"
-    change_luck_api = "https://api.milimoe.com/userdaily/remove/"
     create_table_sql = """
     CREATE TABLE IF NOT EXISTS DailyLuck (
         id INT AUTO_INCREMENT PRIMARY KEY,
         qq_number VARCHAR(32) NOT NULL,
-        luck VARCHAR(8) NOT NULL,
-        description VARCHAR(255),
+        luck VARCHAR(32) NOT NULL,
+        description VARCHAR(512),
         date DATE,
         changed VARCHAR(5),
         UNIQUE KEY unique_qq_date (qq_number, date)
@@ -49,6 +45,10 @@ class DailyLuck(BasePlugin):
     WHERE qq_number = %s
     AND date = %s
     """
+    query_luck_explain = """
+    SELECT * FROM daily_luck_map
+    WHERE luck = %s
+    """
 
     async def daily_luck(self, msg: GroupMessage):
         self.mysql.connect()
@@ -62,21 +62,16 @@ class DailyLuck(BasePlugin):
 
         records = self.mysql.execute_query(self.query_template, (qq_number, today))
         if len(records) != 0:
-            await msg.reply(text=f"{records[0]['description']}", image=image)
+            await msg.reply(
+                text=f"{records[0]['luck']}\n{records[0]['description']}\n{image_response if image is None else ''}",
+                image=image)
             return
 
-        luck_response = send_request('POST', f"{self.api_uri}{qq_number}", "Daily_Luck")
-        if isinstance(luck_response, str):
-            await msg.reply(text=f"{luck_response}", image=image)
-            return
-
-        result = Explain(luck_response).get_res()
-        result["qq_number"] = qq_number
-        result["date"] = today
-        result["changed"] = "False"
+        result = self.get_description(qq_number, today, "False")
         self.mysql.insert_data("DailyLuck", [result])
         self.mysql.disconnect()
-        await msg.reply(text=f"{result['description']}{image_response if image is None else None}", image=image)
+        await msg.reply(text=f"{result['luck']}\n{result['description']}\n{image_response if image is None else ''}",
+                        image=image)
 
     async def change_luck(self, msg: GroupMessage):
         self.mysql.connect()
@@ -96,16 +91,29 @@ class DailyLuck(BasePlugin):
         if isinstance(image_response, dict):
             image = image_response['acgurl']
 
-        luck_response = send_request('POST', f"{self.change_luck_api}{qq_number}", "Change_Luck")
-        if isinstance(luck_response, str):
-            await msg.reply(text=f"{luck_response}{image_response if image is None else None}", image=image)
-            return
-
-        result = Explain(luck_response).get_res()
-        result["changed"] = "True"
+        result = self.get_description(qq_number, today, "False")
         self.mysql.update_data(self.update_template, (qq_number, today), [result])
         self.mysql.disconnect()
-        await msg.reply(text=f"{result['description']}{image_response if image is None else None}", image=image)
+        await msg.reply(text=f"{result['luck']}\n{result['description']}\n{image_response if image is None else ''}",
+                        image=image)
+
+    def get_description(self, qq_number, today, changed):
+        luck = 0
+        while luck < 0.5 or luck >= 10.5:
+            luck = np.random.normal(loc=5.5, scale=3)
+        luck = int(round(luck))
+
+        luck_list = self.mysql.execute_query(self.query_luck_explain, luck)
+        result = random.choice(luck_list)
+        return {
+            "qq_number": qq_number,
+            "date": today,
+            "changed": changed,
+            "description": "签文：" + result['sign'] + '\n'
+                            "签解：" + result['explain'] + '\n'
+                            "运势解析：" + result['description'],
+            "luck": "★" * luck + "☆" * (10 - luck)
+        }
 
     async def on_load(self):
         # 插件加载时执行的操作, 可缺省
