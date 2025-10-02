@@ -1,0 +1,25 @@
+10-02 14:28:02 [info] [StdOut] 已重定向到命名管道: \\.\pipe\NapCat_31272
+10-02 14:28:02 [info] [FFmpeg] [Download] 0% - 查找可用下载源
+10-02 14:28:02 [info] [NapCat] [Core] NapCat.Core Version: 4.8.116
+10-02 14:28:02 [info] [NapCat] [WebUi] 🔐 检测到默认密码，已自动更新为安全密码
+10-02 14:28:02 [info] [NapCat] [WebUi] 📤 新密码将在QQ登录成功后发送给用户
+10-02 14:28:02 [info] [NapCat] [WebUi] 🔑 已缓存启动时的token用于鉴权，运行时手动修改配置文件密码将不会生效
+10-02 14:28:02 [info] [NapCat] [WebUi] 🔑 token=66518500
+10-02 14:28:02 [info] [NapCat] [WebUi] WebUi User Panel Url: http://127.0.0.1:6099/webui?token=66518500
+10-02 14:28:02 [info] [NapCat] [WebUi] WebUi User Panel Url: http://0.0.0.0:6099/webui?token=66518500
+10-02 14:28:02 [info] 等待网络连接...
+10-02 14:28:02 [info] 网络已连接
+10-02 14:28:02 [info] 正在快速登录  3909177943
+10-02 14:28:02 [error] 当前账号(3909177943)已登录,无法重复登录
+10-02 14:28:03 [info] [FFmpeg] [Download] 5% - 开始下载FFmpeg
+10-02 14:28:03 [info] [FFmpeg] [Download] 5% - 下载FFmpeg
+10-02 14:28:04 [info] [FFmpeg] [Download] 23% - 下载FFmpeg
+10-02 14:28:05 [info] [FFmpeg] [Download] 42% - 下载FFmpeg
+10-02 14:28:06 [info] [FFmpeg] [Download] 57% - 下载FFmpeg
+10-02 14:28:07 [info] [FFmpeg] [Download] 71% - 下载FFmpeg
+10-02 14:28:07 [info] [FFmpeg] [Download] 75% - 下载FFmpeg
+10-02 14:28:07 [info] [FFmpeg] [Download] 75% - 解压FFmpeg
+10-02 14:28:09 [info] [FFmpeg] [Download] 95% - 清理临时文件
+10-02 14:28:09 [info] [FFmpeg] [Download] 100% - FFmpeg安装完成
+10-02 14:28:09 [info] [Check] ffmpeg: D:\my_project\QQBot\napcat\ffmpeg\ffmpeg.exe
+10-02 14:28:09 [info] [Check] ffprobe: D:\my_project\QQBot\napcat\ffmpeg\ffprobe.exe

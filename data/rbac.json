@@ -1,0 +1,117 @@
+{
+    "case_sensitive": true,
+    "default_role": "user",
+    "roles": {
+        "user": {
+            "white_permissions_list": [
+                "DailyWife.DailyWife",
+                "DailyLuck.DailyLuck",
+                "DailyLuck.ChangeLuck",
+                "CS2CaseSimulator.CS2CaseSimulator",
+                "CS2CaseSimulator.CS2CaseSimulatorHelper",
+                "GoBang.NewGame",
+                "GoBang.PlayGame",
+                "GoBang.StartGame",
+                "GoBang.ChessDown",
+                "GoBang.GiveUp",
+                "GoBang.QuitGame",
+                "HistoryDay.HistoryDay",
+                "HistoryDay.InsertHistory",
+                "Poem.Poem",
+                "Menu.Menu",
+                "What2Eat.DailyLuck",
+                "DailyMusic.DailyMusic",
+                "UUCrawlMonitor.UUCrawlMonitorAdd",
+                "UUCrawlMonitor.UUCrawlMonitorRemove"
+            ],
+            "black_permissions_list": []
+        },
+        "admin": {
+            "white_permissions_list": [
+                "CS2CaseSimulator.CS2CaseSimulatorAdmin"
+            ],
+            "black_permissions_list": []
+        },
+        "root": {
+            "white_permissions_list": [],
+            "black_permissions_list": []
+        }
+    },
+    "role_users": {
+        "user": [
+            "1339550557",
+            "1633360356"
+        ],
+        "admin": [],
+        "root": [
+            "1633360356"
+        ]
+    },
+    "users": {
+        "1633360356": {
+            "white_permissions_list": [],
+            "black_permissions_list": [],
+            "role_list": [
+                "user",
+                "root"
+            ]
+        },
+        "1339550557": {
+            "white_permissions_list": [],
+            "black_permissions_list": [],
+            "role_list": [
+                "user"
+            ]
+        }
+    },
+    "permissions_trie_paths": {
+        "DailyWife": {
+            "DailyWife": {}
+        },
+        "DailyLuck": {
+            "DailyLuck": {},
+            "ChangeLuck": {}
+        },
+        "CS2CaseSimulator": {
+            "CS2CaseSimulator": {},
+            "CS2CaseSimulatorHelper": {},
+            "CS2CaseSimulatorAdmin": {}
+        },
+        "GoBang": {
+            "NewGame": {},
+            "PlayGame": {},
+            "StartGame": {},
+            "ChessDown": {},
+            "GiveUp": {},
+            "QuitGame": {}
+        },
+        "HistoryDay": {
+            "HistoryDay": {},
+            "InsertHistory": {}
+        },
+        "Poem": {
+            "Poem": {}
+        },
+        "Menu": {
+            "Menu": {}
+        },
+        "What2Eat": {
+            "DailyLuck": {}
+        },
+        "DailyMusic": {
+            "DailyMusic": {}
+        },
+        "UUCrawlMonitor": {
+            "UUCrawlMonitorAdd": {},
+            "UUCrawlMonitorRemove": {}
+        }
+    },
+    "role_inheritance": {
+        "admin": [
+            "root"
+        ],
+        "user": [
+            "admin"
+        ]
+    }
+}

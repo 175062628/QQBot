@@ -1,0 +1,14 @@
+10-02 15:06:32 [info] [StdOut] 已重定向到命名管道: \\.\pipe\NapCat_21420
+10-02 15:06:32 [info] [NapCat] [Core] NapCat.Core Version: 4.8.116
+10-02 15:06:32 [info] [Check] ffmpeg: D:\my_project\QQBot\napcat\ffmpeg\ffmpeg.exe
+10-02 15:06:32 [info] [Check] ffprobe: D:\my_project\QQBot\napcat\ffmpeg\ffprobe.exe
+10-02 15:06:32 [info] [NapCat] [WebUi] 🔐 检测到默认密码，已自动更新为安全密码
+10-02 15:06:32 [info] [NapCat] [WebUi] 📤 新密码将在QQ登录成功后发送给用户
+10-02 15:06:32 [info] [NapCat] [WebUi] 🔑 已缓存启动时的token用于鉴权，运行时手动修改配置文件密码将不会生效
+10-02 15:06:32 [info] [NapCat] [WebUi] 🔑 token=084bb76d
+10-02 15:06:32 [info] [NapCat] [WebUi] WebUi User Panel Url: http://127.0.0.1:6099/webui?token=084bb76d
+10-02 15:06:32 [info] [NapCat] [WebUi] WebUi User Panel Url: http://0.0.0.0:6099/webui?token=084bb76d
+10-02 15:06:32 [info] 等待网络连接...
+10-02 15:06:33 [info] 网络已连接
+10-02 15:06:33 [info] 正在快速登录  3909177943
+10-02 15:06:33 [error] 当前账号(3909177943)已登录,无法重复登录
