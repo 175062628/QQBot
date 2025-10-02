@@ -2,7 +2,7 @@ bot_id: 3909177943
 root_id: 1633360356
 bot_name: Bot
 host: localhost
-user: root
+user: Bot
 password: Yx030411
 database: QQBot
 gaode_map_key: 020b244c6a49beca42dba74814338786

@@ -5,8 +5,6 @@ from ncatbot.core import GroupMessage
 import time
 import re
 
-from ncatbot.plugin_system import NcatBotPlugin
-
 sys.path.append(os.path.dirname(__file__))
 from .probability import ProbabilityDistributor
 
@@ -17,7 +15,7 @@ config = load_config_from_yaml("config.yaml")
 bot_id = config.get("bot_id")
 bot_name = config.get("bot_name")
 
-class CS2CaseSimulator(NcatBotPlugin):
+class CS2CaseSimulator(BasePlugin):
     name = "CS2CaseSimulator" # 插件名称
     version = "0.0.2" # 插件版本
     author = "Ethan Ye"
