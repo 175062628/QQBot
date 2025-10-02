@@ -3,9 +3,8 @@ from zoneinfo import ZoneInfo
 
 import requests
 import json
-from uu_data_model import *
+from .uu_data_model import *
 import time
-
 
 def crawl_goods(goods_list, interval):
     url = "https://api.youpin898.com/api/homepage/es/commodity/GetCsGoPagedList"
@@ -30,9 +29,7 @@ def crawl_goods(goods_list, interval):
         }
         response = requests.request("POST", url, headers=headers, data=payload).json()
 
-        print(response)
         market_model = prase_json(response)
-        print(market_model)
 
         if market_model is not None:
             res.append(market_model)
@@ -43,14 +40,14 @@ def crawl_goods(goods_list, interval):
 
 
 def prase_json(response):
-    if response["Code"] != 0:
+    if response["Code"] != 0 or response["Data"] is None or len(response["Data"]) == 0 or response["Data"]["TemplateInfo"] is None:
         return None
 
     name = response["Data"]["TemplateInfo"]["CommodityName"] \
         if response["Data"]["TemplateInfo"]["CommodityName"] is not None else ''
 
     template_id = response["Data"]["TemplateInfo"]["Id"] \
-        if response["Data"]["TemplateInfo"]["Id"] is not None else 0
+        if response["Data"]["TemplateInfo"]["Id"] is not None else ''
 
     min_price = float(response["Data"]["TemplateInfo"]["MinPrice"]) \
         if response["Data"]["TemplateInfo"]["MinPrice"] is not None else 0
@@ -73,7 +70,7 @@ def prase_json(response):
     return MarketModel(
         datetime.datetime.now(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S"),
         name,
-        template_id,
+        str(template_id),
         min_price,
         on_sale_count,
         on_lease_count,

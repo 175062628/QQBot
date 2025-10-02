@@ -7,6 +7,7 @@ import re
 
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
 from ncatbot.core import GroupMessage
+from ncatbot.core.event.message_segment import MessageArray, Text, At, Image
 
 sys.path.append(os.path.dirname(__file__))
 
@@ -79,37 +80,36 @@ class What2Eat(BasePlugin):
         if len(restaurant_list) > self.random_size:
             res_list = random.sample(restaurant_list, self.random_size)
 
-        text = f"为你推荐{len(res_list)}家餐厅："
+        text = f"\n\n为你推荐{len(res_list)}家餐厅："
+
         for item in res_list:
-            text += '\n\n'+self.restaurant_praser(item)
+            text += self.restaurant_praser(item)
 
         await msg.reply(text=text)
 
     def restaurant_praser(self, item):
         detail = item.get('business')
-        res = {
+        text = {
             'name': item.get('name'),
             'rate': detail.get('rating') if detail is not None else None,
             'cost': detail.get('cost') if detail is not None else None,
             'tag': detail.get('tag') if detail is not None else None,
             'address': item.get('address'),
-            'open_time': detail.get('opentime_week') if detail is not None else None,
-            'images': [t.get('url') for t in item.get('photos', [])]
+            'open_time': detail.get('opentime_week') if detail is not None else None
         }
-        temp = res.copy()
-        if "images" in temp and temp["images"]:
-            res["images"] = ''.join([
-                f"[CQ:image,summary=[图片],url={url}]"
-                for url in temp["images"]
-                if url
-            ]) if temp["images"] != [] else None
+        images = [t.get('url') for t in item.get('photos', [])]
 
         formatted = [
             f"{self.praser_map[key]}{value}"
-            for key, value in res.items()
+            for key, value in text.items()
             if value is not None
         ]
-        return '\n'.join(formatted)
+        msg = MessageArray(Text('\n\n'+'\n'.join(formatted)))
+
+        for img in images:
+            msg.add_image(img)
+
+        return msg
 
     async def on_load(self):
         # 插件加载时执行的操作, 可缺省

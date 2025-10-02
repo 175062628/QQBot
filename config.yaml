@@ -1,4 +1,5 @@
 bot_id: 3909177943
+root_id: 1633360356
 bot_name: Bot
 host: localhost
 user: root
@@ -6,3 +7,15 @@ password: Yx030411
 database: QQBot
 gaode_map_key: 020b244c6a49beca42dba74814338786
 crawl_interval: 1
+napcat:
+  ws_uri: ws://localhost:3001
+  webui_uri: http://localhost:6099
+  webui_token: 123NcatBot321!@
+  ws_token: 'NcatBot'
+  ws_listen_ip: localhost
+  enable_webui: true
+  remote_mode: false
+  check_napcat_update: false
+  stop_napcat: false
+  report_self_message: false
+  report_forward_message_detail: true # 上报解析合并转发消息

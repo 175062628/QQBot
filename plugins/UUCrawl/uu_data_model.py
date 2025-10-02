@@ -12,7 +12,7 @@ class MarketModel:
     def __init__(self,
                  time='',
                  name='',
-                 template_id=0,
+                 template_id='',
                  min_price=0,
                  on_sale_count=0,
                  on_lease_count=0,

@@ -4,7 +4,8 @@ import requests
 import random
 
 from ncatbot.plugin import BasePlugin, CompatibleEnrollment
-from ncatbot.core import GroupMessage, Music, MessageChain, Text, Image
+from ncatbot.core import GroupMessage, MessageChain, Text, Image
+from ncatbot.core.event.message_segment import Music
 
 sys.path.append(os.path.dirname(__file__))
 from mysql_assistant import MySQLAssistant
@@ -12,13 +13,15 @@ from mysql_assistant import MySQLAssistant
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
 from utils import load_config_from_yaml, send_request
+
 config = load_config_from_yaml("config.yaml")
 bot_id = config.get("bot_id")
 bot_name = config.get("bot_name")
 
+
 class DailyMusic(BasePlugin):
-    name = "DailyMusic" # 插件名称
-    version = "0.0.1" # 插件版本
+    name = "DailyMusic"  # 插件名称
+    version = "0.0.1"  # 插件版本
     author = "Ethan Ye"
     info = "今日歌曲，使用方式：[@Bot ]今日(热歌|新歌|原创|飙升)榜"
     description = "今日歌曲，适用于私聊和群聊"
@@ -40,7 +43,7 @@ class DailyMusic(BasePlugin):
         WHERE type = %s
         """
 
-    def music(self, word) -> dict|str:
+    def music(self, word) -> dict | str:
         response = send_request('GET', f"{self.api_url}{word[-3:]}?type=json", 'Daily_Top_Music')
         if isinstance(response, str):
             return response
@@ -54,7 +57,6 @@ class DailyMusic(BasePlugin):
             "music": response["url"],
             "type": word,
         }
-
 
     async def get_top_music(self, msg: GroupMessage):
         self.mysql.create_table_if_not_exists("DailyMusic", create_table_sql=self.create_table_sql)
