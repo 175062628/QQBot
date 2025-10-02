@@ -1,21 +1,25 @@
-bot_id: 3909177943
-root_id: 1633360356
-bot_name: Bot
-host: localhost
-user: Bot
-password: Yx030411
-database: QQBot
-gaode_map_key: 020b244c6a49beca42dba74814338786
-crawl_interval: 1
+root: '1633360356'
+bt_uin: '3909177943'
+enable_webui_interaction: false
+debug: false
+github_proxy: null
+check_ncatbot_update: true
+skip_ncatbot_install_check: false
+websocket_timeout: 15
 napcat:
   ws_uri: ws://localhost:3001
+  ws_token: NcatBot
+  ws_listen_ip: localhost
   webui_uri: http://localhost:6099
   webui_token: 123NcatBot321!@
-  ws_token: 'NcatBot'
-  ws_listen_ip: localhost
   enable_webui: true
-  remote_mode: false
   check_napcat_update: false
   stop_napcat: false
+  remote_mode: false
   report_self_message: false
-  report_forward_message_detail: true # 上报解析合并转发消息
+  report_forward_message_detail: true
+plugin:
+  plugins_dir: plugins
+  plugin_whitelist: []
+  plugin_blacklist: []
+  skip_plugin_load: false

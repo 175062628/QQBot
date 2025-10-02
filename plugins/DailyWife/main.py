@@ -19,7 +19,7 @@ bot_qq = ["3909177943",
           "2854208500"]
 
 from utils import load_config_from_yaml
-config = load_config_from_yaml("config.yaml")
+config = load_config_from_yaml("my_config.yaml")
 bot_id = config.get("bot_id")
 bot_name = config.get("bot_name")
 

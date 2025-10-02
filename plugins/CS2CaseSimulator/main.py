@@ -11,7 +11,7 @@ from .probability import ProbabilityDistributor
 bot = CompatibleEnrollment  # 兼容回调函数注册器
 
 from utils import load_config_from_yaml
-config = load_config_from_yaml("config.yaml")
+config = load_config_from_yaml("my_config.yaml")
 bot_id = config.get("bot_id")
 bot_name = config.get("bot_name")
 

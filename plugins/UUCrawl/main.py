@@ -12,13 +12,13 @@ from mysql_assistant import MySQLAssistant
 from utils import load_config_from_yaml
 
 bot = CompatibleEnrollment  # 兼容回调函数注册器
-config = load_config_from_yaml("config.yaml")
+config = load_config_from_yaml("my_config.yaml")
 bot_id = config.get("bot_id")
 bot_name = config.get("bot_name")
 interval = config.get("crawl_interval")
 group_id_list = config.get("crawl_group_id_list")
 
-class UUCrawl(NcatBotPlugin):
+class UUCrawl(BasePlugin):
     name = "UUCrawl"  # 插件名称
     version = "0.0.1"  # 插件版本
     author = "Ethan Ye"
